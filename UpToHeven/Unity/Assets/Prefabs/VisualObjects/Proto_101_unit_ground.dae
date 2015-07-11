@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Minddesk Qubicle 2</authoring_tool>
+      <comments>Get Qubicle at www.minddesk.com</comments>
+    </contributor>
+    <created>2015-07-0810:29 PM22:29:24:677</created>
+    <modified>2015-07-0810:29 PM22:29:24:677</modified>
+    <unit meter="0.01" />
+  </asset>
+  <library_images>
+    <image id="Proto_101_unit_ground-image" name="Proto_101_unit_ground-image">
+      <init_from>file:///Materials/Proto_101_unit_ground.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Proto_101_unit_ground-material" name="Proto_101_unit_ground-material">
+      <instance_effect url="#Proto_101_unit_ground-shader-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Proto_101_unit_ground-shader-fx" name="Proto_101_unit_ground-shader-fx">
+      <profile_COMMON>
+        <newparam sid="Proto_101_unit_ground-image-surface">
+          <surface type="2D">
+            <init_from>Proto_101_unit_ground-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Proto_101_unit_ground-image-sampler">
+          <sampler2D>
+            <source>Proto_101_unit_ground-image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NEAREST</minfilter>
+            <magfilter>NEAREST</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <lambert>
+            <ambient>
+              <color sid="ambient">0.0 0.0 0.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="CHANNEL0" texture="Proto_101_unit_ground-image-sampler" />
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry name="Box_1" id="Box_1-lib">
+      <mesh>
+        <source id="Box_1-position">
+          <float_array id="Box_1-position-array" count="24">10.5 2.5 -10.5 10.5 -2.5 -10.5 -10.5 -2.5 -10.5 -10.5 2.5 -10.5 -10.5 2.5 10.5 -10.5 -2.5 10.5 10.5 -2.5 10.5 10.5 2.5 10.5 </float_array>
+          <technique_common>
+            <accessor source="Box_1-position-array" stride="3" count="8">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_1-normal">
+          <float_array id="Box_1-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_1-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_1-uv">
+          <float_array id="Box_1-uv-array" count="48">0.015625 0.34375 0.015625 0.015625 0.34375 0.015625 0.34375 0.34375 0.375 0.34375 0.375 0.015625 0.703125 0.015625 0.703125 0.34375 0.015625 0.453125 0.015625 0.375 0.34375 0.375 0.34375 0.453125 0.375 0.453125 0.375 0.375 0.703125 0.375 0.703125 0.453125 0.015625 0.5625 0.015625 0.484375 0.34375 0.484375 0.34375 0.5625 0.375 0.5625 0.375 0.484375 0.703125 0.484375 0.703125 0.5625 </float_array>
+          <technique_common>
+            <accessor source="Box_1-uv-array" stride="2" count="24">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_1-vertex">
+          <input semantic="POSITION" source="#Box_1-position" />
+        </vertices>
+        <polylist material="Proto_101_unit_ground-material" count="12">
+          <input offset="0" semantic="VERTEX" source="#Box_1-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_1-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_1-uv" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 1 13 3 1 15 0 1 12 1 1 13 2 1 14 3 1 15 5 0 9 7 0 11 4 0 8 5 0 9 6 0 10 7 0 11 2 2 21 4 2 23 3 2 20 2 2 21 5 2 22 4 2 23 6 3 17 0 3 19 7 3 16 6 3 17 1 3 18 0 3 19 3 4 0 4 4 1 0 4 3 4 4 1 7 4 2 0 4 3 5 5 4 2 5 5 6 5 7 2 5 5 1 5 6 6 5 7 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Proto_101_unit_ground-scene" name="Proto_101_unit_ground-scene">
+      <node sid="Box_1" id="Box_1" name="Box_1">
+        <translate sid="translate">-37.50 2.50 -73.50</translate>
+        <instance_geometry url="#Box_1-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Proto_101_unit_ground-material" target="#Proto_101_unit_ground-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene name="" sid="" url="#Proto_101_unit_ground-scene" />
+  </scene>
+</COLLADA>
