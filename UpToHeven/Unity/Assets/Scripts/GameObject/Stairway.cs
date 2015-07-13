@@ -6,6 +6,7 @@ public class Stairway : MonoBehaviour {
 	public GameObject stepPartPref;
 	public int stepPartCount = 15;
 	public GameObject[] steps;
+	public float stepPartCrashTime;
 
 	private ObscaleController obscaleController;
 	// Use this for initialization
@@ -40,11 +41,11 @@ public class Stairway : MonoBehaviour {
 				stepPart = (GameObject)Instantiate(stepPartPref);
 				stepPart.transform.localPosition = new Vector3(i * size.x ,-size.y * 0.5f,0);
 				stepPart.transform.parent = step.transform;
-				stepPart.GetComponent<DisableKinematicAfterTime>().disableKinematicAfterTime((stepPartCount * index + i) / 10.0f);
-				stepPart.GetComponent<RemoveAfterTime>().StartRemoving((stepPartCount * index + i) / 10.0f + 0.5f);
+				stepPart.GetComponent<DisableKinematicAfterTime>().disableKinematicAfterTime((stepPartCount * index + i) * stepPartCrashTime);
+				stepPart.GetComponent<RemoveAfterTime>().StartRemoving((stepPartCount * index + i) * stepPartCrashTime + 0.5f);
 
 				if(!obscalesFinished){
-					int rand = Random.Range (0,5);
+					int rand = Random.Range (0,6);
 
 					if(rand == 3){
 

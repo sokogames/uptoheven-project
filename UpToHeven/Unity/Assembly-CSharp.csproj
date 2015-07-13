@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\Controller\Action\Action.cs" />
+     <Compile Include="Assets\Scripts\Controller\Action\ActionQueue.cs" />
+     <Compile Include="Assets\Scripts\Controller\Action\IActor.cs" />
      <Compile Include="Assets\Scripts\Controller\Controller.cs" />
      <Compile Include="Assets\Scripts\Controller\DisableKinematicAfterTime.cs" />
      <Compile Include="Assets\Scripts\Controller\GameController.cs" />

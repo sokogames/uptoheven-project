@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum MovingDirection
+{
+	left,right,forward,back
+};
+
 public class Moving : MonoBehaviour {
 
-	public const string LEFT = "left";
-	public const string RIGHT = "right";
-	public const string FORWARD = "forward";
-	public const string BACK = "back";
-	
-	private string[] directions;
+
+	private MovingDirection[] directions = {MovingDirection.forward, MovingDirection.right, MovingDirection.back, MovingDirection.left};
 	
 	private int _directionID;
 	public int directionID {
@@ -18,6 +19,18 @@ public class Moving : MonoBehaviour {
 		
 		set{
 			_directionID = value > 3 ? 0 : value < 0 ? 3 : value;	
+
+			switch(directions[_directionID]){
+				case MovingDirection.forward: transform.rotation = Quaternion.Euler(0, 0, 0); break;
+				case MovingDirection.right: transform.rotation = Quaternion.Euler(0, 90, 0); break;
+				case MovingDirection.left: transform.rotation = Quaternion.Euler(0, -90, 0); break;
+				case MovingDirection.back: transform.rotation = Quaternion.Euler(0, 180, 0); break;
+			}
+		}
+	}
+	public MovingDirection currentDirection{
+		get{
+			return directions[directionID];
 		}
 	}
 	// Use this for initialization
@@ -33,7 +46,6 @@ public class Moving : MonoBehaviour {
 	
 	void Start () {
 		directionID = 0;
-		directions = new string[4]{FORWARD, RIGHT, BACK, LEFT};
 	}
 	
 	// Update is called once per frame
@@ -48,15 +60,12 @@ public class Moving : MonoBehaviour {
 	}
 
 	public void RotateLeft(){
-		transform.Rotate(new Vector3(0,-90,0));
 		directionID--;
 	}
 	public void RotateRight(){
-		transform.Rotate(new Vector3(0,90,0));
 		directionID++;
 	}
 	public void Reverse(){
-		transform.Rotate(new Vector3(0,180,0));
 		directionID++;
 		directionID++;
 	}
@@ -71,10 +80,10 @@ public class Moving : MonoBehaviour {
 		float jumpX = 0, jumpZ = 0;
 		
 		switch (directions [directionID]) {
-		case LEFT: jumpX = -jumpDistanceOnSide; jumpZ = 0; break;
-		case RIGHT: jumpX = jumpDistanceOnSide; jumpZ = 0; break;
-		case FORWARD: jumpX = 0; jumpZ = jumpDistanceUp; break;
-		case BACK: jumpX = 0; jumpZ = -jumpDistanceDown; break;
+		case MovingDirection.left: jumpX = -jumpDistanceOnSide; jumpZ = 0; break;
+		case MovingDirection.right: jumpX = jumpDistanceOnSide; jumpZ = 0; break;
+		case MovingDirection.forward: jumpX = 0; jumpZ = jumpDistanceUp; break;
+		case MovingDirection.back: jumpX = 0; jumpZ = -jumpDistanceDown; break;
 		}
 		
 		GetComponent<Rigidbody>().velocity = new Vector3(jumpX,jumpHeight,jumpZ);
