@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour {
 	public Vector3 offset;
 	// Use this for initialization
 	void Start () {
-		transform.position = player.startingPosition;
+		transform.position = player.transform.position;
 	}
 	
 	// Update is called once per frame

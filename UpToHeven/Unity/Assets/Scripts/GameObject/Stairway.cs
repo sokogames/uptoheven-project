@@ -33,22 +33,48 @@ public class Stairway : MonoBehaviour {
 		}
 
 		foreach (GameObject step in steps) {
+			//if is first obscale on this step;
+			bool firstObscale = true;
+			bool obscalesFinished = false;
 			for(i = 0; i < stepPartCount; i++){
 				stepPart = (GameObject)Instantiate(stepPartPref);
 				stepPart.transform.localPosition = new Vector3(i * size.x ,-size.y * 0.5f,0);
 				stepPart.transform.parent = step.transform;
 				stepPart.GetComponent<DisableKinematicAfterTime>().disableKinematicAfterTime((stepPartCount * index + i) / 10.0f);
 				stepPart.GetComponent<RemoveAfterTime>().StartRemoving((stepPartCount * index + i) / 10.0f + 0.5f);
-				int rand = Random.Range (0,5);
 
-				if(rand == 3){
-					GameObject obscale = obscaleController.Obscale(ObscaleType.StaticObscale);
-					obscale.transform.parent = step.transform;
-					obscale.transform.localPosition = new Vector3(i ,1 ,0);
+				if(!obscalesFinished){
+					int rand = Random.Range (0,5);
+
+					if(rand == 3){
+
+						if(firstObscale){
+							int randForType = Random.Range(0,4);
+
+							if(randForType >= 3){
+								createObscale(ObscaleType.DynamicObscalePatrolling,step.transform,i);
+								obscalesFinished = true;
+
+								continue;
+							}
+						}
+
+						createObscale(ObscaleType.StaticObscale,step.transform,i);
+
+						firstObscale = false;
+					}
 				}
 			}
 			step.transform.position  = new Vector3(0,index * size.x * 0.2f ,index * size.x);
 			index++;
 		}
+	}
+	private GameObject createObscale(ObscaleType type, Transform parent, int index){
+
+		GameObject obscale = obscaleController.Obscale(type);
+		obscale.transform.parent = parent;
+		obscale.transform.localPosition = new Vector3(index ,1 ,0);
+
+		return obscale;
 	}
 }

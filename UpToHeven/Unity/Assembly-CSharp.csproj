@@ -53,10 +53,12 @@
      <Compile Include="Assets\Scripts\Controller\ObscaleController.cs" />
      <Compile Include="Assets\Scripts\Controller\RemoveAfterTime.cs" />
      <Compile Include="Assets\Scripts\Data\GlobalData.cs" />
+     <Compile Include="Assets\Scripts\GameObject\AI\MovingAI.cs" />
+     <Compile Include="Assets\Scripts\GameObject\AI\Patrolling.cs" />
+     <Compile Include="Assets\Scripts\GameObject\AI\Strategy.cs" />
      <Compile Include="Assets\Scripts\GameObject\Moving.cs" />
-     <Compile Include="Assets\Scripts\GameObject\MovingAI.cs" />
+     <Compile Include="Assets\Scripts\GameObject\ObjectVision.cs" />
      <Compile Include="Assets\Scripts\GameObject\Player.cs" />
-     <Compile Include="Assets\Scripts\GameObject\PlayerVision.cs" />
      <Compile Include="Assets\Scripts\GameObject\RemoveAfterTime.cs" />
      <Compile Include="Assets\Scripts\GameObject\Stairway.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />

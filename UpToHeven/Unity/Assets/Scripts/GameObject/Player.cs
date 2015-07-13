@@ -5,12 +5,10 @@ public class Player : MonoBehaviour {
 
 	public Moving movingScript;
 	public GameObject playerPref;
-	public Vector3 startingPosition;
 
 	private Animator anim;
 	// Use this for initialization
 	void Start () {
-		transform.position = startingPosition;
 		anim = GetComponent<Animator> ();
 	}
 	

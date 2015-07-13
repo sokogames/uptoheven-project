@@ -27,7 +27,7 @@ public class Moving : MonoBehaviour {
 	public float jumpDistanceUp = 2.0f;
 	public float jumpDistanceDown = 1.5f;
 
-	public PlayerVision playerVision;
+	public ObjectVision playerVision;
 	
 	private Quaternion toRotation;
 	
@@ -53,6 +53,11 @@ public class Moving : MonoBehaviour {
 	}
 	public void RotateRight(){
 		transform.Rotate(new Vector3(0,90,0));
+		directionID++;
+	}
+	public void Reverse(){
+		transform.Rotate(new Vector3(0,180,0));
+		directionID++;
 		directionID++;
 	}
 
