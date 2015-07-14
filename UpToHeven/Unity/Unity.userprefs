@@ -1,10 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\Action\Action.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObject\AI\IStategy.cs">
     <Files>
-      <File FileName="Assets\Scripts\Controller\Action\ActionQueue.cs" Line="31" Column="46" />
-      <File FileName="Assets\Scripts\Controller\Action\Action.cs" Line="11" Column="95" />
-      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="23" Column="18" />
+      <File FileName="Assets\Scripts\Controller\Action\ActionQueue.cs" Line="35" Column="4" />
+      <File FileName="Assets\Scripts\Controller\Action\Action.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Controller\Action\IActor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Controller\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\Stairway.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\Moving.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\AI\Patrolling.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\AI\IStategy.cs" Line="4" Column="18" />
+      <File FileName="Assets\Scripts\GameObject\AI\MovingAI.cs" Line="7" Column="26" />
+      <File FileName="Assets\Scripts\GameObject\AI\SteppingDown.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

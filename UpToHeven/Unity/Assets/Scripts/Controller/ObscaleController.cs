@@ -22,7 +22,7 @@ public class ObscaleController : MonoBehaviour {
 			return Instantiate(staticObscalesPrefs[0]);
 		}
 		if(type == ObscaleType.DynamicObscalePatrolling){
-			return Instantiate(dynamicObscalePrefs[0]);
+			return Instantiate(dynamicObscalePrefs[1/*Random.Range(0,2)*/]);
 		}
 
 		return staticObscalesPrefs[0];

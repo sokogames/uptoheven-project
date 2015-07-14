@@ -75,7 +75,7 @@ public class Moving : MonoBehaviour {
 		if (playerVision.hasBarrier ())
 			return false;
 		
-		if (GetComponent<Rigidbody>().velocity.magnitude > 0.01f) return false;
+		if (GetComponent<Rigidbody>().velocity.magnitude > 0.02f) return false;
 
 		float jumpX = 0, jumpZ = 0;
 		
@@ -99,6 +99,11 @@ public class Moving : MonoBehaviour {
 		
 		if (velocity.magnitude < 0.1f) {
 			transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y , Mathf.RoundToInt(transform.position.z));
+		}
+	}
+	public void ToDirection(MovingDirection toDirection){
+		while (currentDirection != toDirection) {
+			RotateLeft();
 		}
 	}
 }

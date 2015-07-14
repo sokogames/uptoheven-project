@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Patrolling : Strategy {
+public class Patrolling : Stategy {
 
 	// Use this for initialization
 	public ObjectVision objectVision;

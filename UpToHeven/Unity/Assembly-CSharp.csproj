@@ -58,7 +58,8 @@
      <Compile Include="Assets\Scripts\Data\GlobalData.cs" />
      <Compile Include="Assets\Scripts\GameObject\AI\MovingAI.cs" />
      <Compile Include="Assets\Scripts\GameObject\AI\Patrolling.cs" />
-     <Compile Include="Assets\Scripts\GameObject\AI\Strategy.cs" />
+     <Compile Include="Assets\Scripts\GameObject\AI\Stategy.cs" />
+     <Compile Include="Assets\Scripts\GameObject\AI\SteppingDown.cs" />
      <Compile Include="Assets\Scripts\GameObject\Moving.cs" />
      <Compile Include="Assets\Scripts\GameObject\ObjectVision.cs" />
      <Compile Include="Assets\Scripts\GameObject\Player.cs" />

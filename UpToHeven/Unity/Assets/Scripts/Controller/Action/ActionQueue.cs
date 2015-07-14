@@ -19,7 +19,7 @@ public class ActionQueue : MonoBehaviour{
 			Debug.LogError ("Actor not assigned to ActionQueue");
 		}
 		actions.Add (action);
-		Debug.Log (actions.Count);
+
 		//if only actions is that
 		if (actionAddressingFinished) {
 			StartCoroutine("AddressActions");
@@ -32,7 +32,7 @@ public class ActionQueue : MonoBehaviour{
 		while (actions.Count > 0) {
 		
 			Action action = actions[0];
-			Debug.Log (actions.Count);
+
 			switch(action.type){
 			case ActionType.jump : actor.Jump();break;
 			case ActionType.readyForJump : actor.ReadyForJump(action.jumpDirection);break;

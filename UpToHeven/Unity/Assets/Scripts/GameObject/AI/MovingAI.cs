@@ -5,7 +5,7 @@ public class MovingAI : MonoBehaviour {
 
 	public Moving movingScript;
 	public float actionTime;
-	public Strategy strategy;
+	public Stategy strategy;
 	// Use this for initialization
 	void Start () {
 		StartCoroutine("DoAction");
