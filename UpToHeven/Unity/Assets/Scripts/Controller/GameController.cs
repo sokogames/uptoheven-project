@@ -12,17 +12,24 @@ public class GameController : Controller {
 
 	public ActionQueue actions;
 
+	private InputHandler inputHandler;
+
 	public void init(){
 
 		//init player
 		GameObject playerPref = (GameObject)Instantiate (player.playerPref, new Vector3 (), Quaternion.Euler(new Vector3(0,0,0)));
+
+		GameObject obj = player.GetComponent<GameObject> ();
+		//obj = playerPref;
 		playerPref.transform.parent = player.transform;
-		playerPref.transform.localPosition = Vector3.zero;
+		playerPref.transform.localPosition = new Vector3(0,0.5f,0);
 		playerPref.transform.localScale = new Vector3 (1, 1, 1);
 
 		actions.actor = player;
 		//init stairway
 		stairway.Generate (obscaleController);
+		inputHandler = (InputHandler)gameObject.AddComponent<InputHandler> ();
+
 	}
 	// Use this for initialization
 	void Start () {
@@ -31,28 +38,26 @@ public class GameController : Controller {
 	
 	// Update is called once per frame
 	void Update () {
+		InputCommand command = inputHandler.InputHandle();
 
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+		switch (command) {
+		case InputCommand.Left: 
 			actions.AddAction(new Action (ActionType.readyForJump, playerRedyForJumpTime, MovingDirection.left));
-		}
-		if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			break;
+		case InputCommand.Right: 
 			actions.AddAction(new Action (ActionType.readyForJump, playerRedyForJumpTime, MovingDirection.right));
-		}
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+			break;
+		case InputCommand.Down: 
 			actions.AddAction(new Action (ActionType.readyForJump, playerRedyForJumpTime, MovingDirection.back));
-		}
-		if(Input.GetKeyDown(KeyCode.Space)){
+			break;
+		case InputCommand.Up: 
 			actions.AddAction(new Action (ActionType.readyForJump, playerRedyForJumpTime, MovingDirection.forward));
-		}
-		if (Input.GetKeyUp (KeyCode.LeftArrow)
-		   ||
-			Input.GetKeyUp (KeyCode.RightArrow)
-		   ||
-			Input.GetKeyUp (KeyCode.DownArrow)
-		   ||
-			Input.GetKeyUp (KeyCode.Space)
-		   ) {
+			break;
+		case InputCommand.Realese:
 			actions.AddAction(new Action (ActionType.jump, playerRedyForJumpTime));
+			break;
+		default:
+			break;
 		}
 	}
 }

@@ -16,8 +16,6 @@ public class SteppingDown : Stategy {
 	}
 	public override void Action(){
 
-		Debug.Log (moving.currentDirection);
-
 		if (moving.currentDirection != MovingDirection.back) {
 			moving.ToDirection(MovingDirection.back);	
 		}
@@ -33,8 +31,8 @@ public class SteppingDown : Stategy {
 
 		moving.ToDirection (toDir);
 
-		if (objectVision.hasBarrier ()) {
-			toDir = toDir == MovingDirection.left ? MovingDirection.right : MovingDirection.left;
+		if (objectVision.hasBarrier () || objectVision.isOnEdge()) {
+			toDir = (toDir == MovingDirection.left ? MovingDirection.right : MovingDirection.left);
 			moving.ToDirection (toDir);
 		}
 		//no left side no right side

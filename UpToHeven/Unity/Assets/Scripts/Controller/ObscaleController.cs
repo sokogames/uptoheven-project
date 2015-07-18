@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum ObscaleType{ StaticObscale, DynamicObscalePatrolling };
+public enum ObscaleType{ StaticObscale, StaticObscaleDouble, DynamicObscalePatrolling , };
 
 public class ObscaleController : MonoBehaviour {
 	
@@ -20,6 +20,9 @@ public class ObscaleController : MonoBehaviour {
 	public GameObject Obscale(ObscaleType type){
 		if(type == ObscaleType.StaticObscale){
 			return Instantiate(staticObscalesPrefs[0]);
+		}
+		if(type == ObscaleType.StaticObscaleDouble){
+			return Instantiate(staticObscalesPrefs[1]);
 		}
 		if(type == ObscaleType.DynamicObscalePatrolling){
 			return Instantiate(dynamicObscalePrefs[1/*Random.Range(0,2)*/]);

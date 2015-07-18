@@ -49,20 +49,21 @@ public class Stairway : MonoBehaviour {
 				if(!obscalesFinished){
 					int rand = Random.Range (0,6);
 
-					if(rand == 3){
+					if(rand >= 4){
 
 						if(firstObscale){
 							int randForType = Random.Range(0,4);
 
-							if(randForType >= 3){
+							if(randForType >= 2){
 								createObscale(ObscaleType.DynamicObscalePatrolling,step.transform,i);
 								obscalesFinished = true;
 
 								continue;
 							}
 						}
+		
 
-						createObscale(ObscaleType.StaticObscale,step.transform,i);
+						createObscale(Random.Range (0,2) == 1 ? ObscaleType.StaticObscale : ObscaleType.StaticObscaleDouble,step.transform,i);
 
 						firstObscale = false;
 					}
