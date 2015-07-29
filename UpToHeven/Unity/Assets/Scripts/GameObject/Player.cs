@@ -5,11 +5,12 @@ public class Player : MonoBehaviour, IActor {
 
 	public Moving movingScript;
 	public GameObject playerPref;
-
 	private Animator anim;
+	private bool landed = true;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+	
 	}
 	
 	// Update is called once per frame
@@ -17,14 +18,13 @@ public class Player : MonoBehaviour, IActor {
 		
 	}
 	public void Jump(){
+		//anim.SetTrigger("readyForJump");
 		movingScript.Jump ();
-		anim.SetTrigger("jump");
+		landed = false;
 	}
 	public void ReadyForJump(MovingDirection toDirection){
-
-
-		anim.SetTrigger("readyForJump");
-
+		
+		anim.SetTrigger ("readyForJump");
 		if(movingScript.currentDirection == toDirection){
 			return;
 		}
@@ -51,5 +51,13 @@ public class Player : MonoBehaviour, IActor {
 			movingScript.RotateRight();
 		}
 		movingScript.Jump ();
+	}
+	public void Landed(){
+
+		if (landed)
+			return;
+
+		landed = true;
+		anim.SetTrigger("landed");
 	}
 }

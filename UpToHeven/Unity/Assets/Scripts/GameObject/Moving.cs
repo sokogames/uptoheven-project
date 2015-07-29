@@ -43,7 +43,8 @@ public class Moving : MonoBehaviour {
 	public ObjectVision playerVision;
 	
 	private Quaternion toRotation;
-	
+
+	// Use this for initialization
 	void Start () {
 		directionID = 0;
 	}
@@ -71,7 +72,7 @@ public class Moving : MonoBehaviour {
 	}
 
 	public bool Jump(){
-		
+
 		if (playerVision.hasBarrier ())
 			return false;
 		
@@ -97,7 +98,10 @@ public class Moving : MonoBehaviour {
 		
 		GetComponent<Rigidbody> ().velocity = velocity;
 		
-		if (velocity.magnitude < 0.1f) {
+		if (velocity.magnitude < 0.1f && velocity.magnitude != 0.0f) {
+			if(GetComponent<Player>()){
+				GetComponent<Player>().Landed();
+			}
 			transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y , Mathf.RoundToInt(transform.position.z));
 		}
 	}
