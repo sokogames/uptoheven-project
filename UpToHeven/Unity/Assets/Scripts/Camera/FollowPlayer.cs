@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 		Vector3 newPos = Vector3.Lerp (gameObject.transform.position, player.transform.position, Time.deltaTime * lerpSpeed);
 
-		newPos = new Vector3(newPos.x , 0 , newPos.z );
+		newPos = new Vector3(newPos.x , player.currentStepPostiion / 50.0f , newPos.z );
 		gameObject.transform.position = newPos + offset;
 
 	}

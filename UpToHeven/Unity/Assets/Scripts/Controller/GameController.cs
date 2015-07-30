@@ -6,6 +6,7 @@ public class GameController : Controller {
 	public Player player;
 	public Stairway stairway;
 	public ObscaleController obscaleController;
+	public int distanceToNextStep = 10;
 
 	public float playerJumpTime;
 	public float playerRedyForJumpTime;
@@ -40,6 +41,11 @@ public class GameController : Controller {
 	void Update () {
 		InputCommand command = inputHandler.InputHandle();
 
+		if (player.enemyTouched) {
+			player.enabled = false;
+			Invoke("GameOver",1.5f);
+		}
+
 		switch (command) {
 		case InputCommand.Left: 
 			actions.AddAction(new Action (ActionType.readyForJump, playerRedyForJumpTime, MovingDirection.left));
@@ -59,5 +65,13 @@ public class GameController : Controller {
 		default:
 			break;
 		}
+
+		if (stairway.lastStepIndex - player.currentStepPostiion < distanceToNextStep) {
+			stairway.AddNextStep();
+		}
+		Debug.Log (stairway.lastStepIndex +" "+ player.currentStepPostiion);
+	}
+	void GameOver(){
+		Application.LoadLevelAsync(0);
 	}
 }

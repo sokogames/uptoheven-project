@@ -19,5 +19,6 @@ public class DisableKinematicAfterTime : MonoBehaviour {
 	}
 	private void  disableKinematic(){
 		GetComponent<Rigidbody> ().isKinematic = false;
+		GetComponent<RemoveAfterTime> ().enabled = true;
 	}
 }
