@@ -23,7 +23,7 @@ public class Patrolling : Stategy {
 	}
 	public override void Action(){
 
-		if (objectVision.isOnEdge ()) {
+		if (objectVision.isOnEdge () || objectVision.hasBarrier()) {
 			moving.Reverse ();
 		} else {
 			moving.Jump();

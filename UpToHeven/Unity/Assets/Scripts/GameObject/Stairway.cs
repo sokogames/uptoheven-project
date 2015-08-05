@@ -59,12 +59,18 @@ public class Stairway : MonoBehaviour {
 			bool firstObscale = true;
 			bool obscalesFinished = false;
 			for(int i = 0; i < stepPartCount; i++){
+				
 				GameObject stepPart = (GameObject)Instantiate(stepPartPref);
 				stepPart.transform.localPosition = new Vector3(i * size.x ,-size.y * 0.5f,0);
 				stepPart.transform.parent = step.transform;
 				if(crashSteps){
 					stepPart.GetComponent<DisableKinematicAfterTime>().disableKinematicAfterTime((stepPartCount * index + i) * stepPartCrashTime);
 					stepPart.GetComponent<RemoveAfterTime>().StartRemoving((stepPartCount * index + i) * stepPartCrashTime + 0.5f);
+				}
+				if(i == 0 || i == (stepPartCount - 1)){
+
+					createObscale(ObscaleType.Handrail,step.transform,i);
+					continue;
 				}
 				if(!obscalesFinished){
 					int rand = Random.Range (0,6);
