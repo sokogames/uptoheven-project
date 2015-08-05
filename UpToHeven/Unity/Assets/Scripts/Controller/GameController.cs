@@ -69,7 +69,7 @@ public class GameController : Controller {
 		if (stairway.lastStepIndex - player.currentStepPostiion < distanceToNextStep) {
 			stairway.AddNextStep();
 		}
-		Debug.Log (stairway.lastStepIndex +" "+ player.currentStepPostiion);
+
 	}
 	void GameOver(){
 		Application.LoadLevelAsync(0);

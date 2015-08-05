@@ -43,9 +43,9 @@ public class Stairway : MonoBehaviour {
 	private GameObject createObscale(ObscaleType type, Transform parent, int index){
 
 		GameObject obscale = obscaleController.Obscale(type);
+
 		obscale.transform.parent = parent;
 		obscale.transform.localPosition = new Vector3(index ,1 ,0);
-
 		return obscale;
 	}
 	public void AddNextStep(){
@@ -72,14 +72,19 @@ public class Stairway : MonoBehaviour {
 					if(rand >= 4){
 						
 						if(firstObscale){
-							int randForType = Random.Range(0,4);
+							int randForType = Random.Range(0,2);
 							
-							if(randForType >= 2){
+							if(randForType == 1){
 								createObscale(ObscaleType.DynamicObscalePatrolling,step.transform,i);
 								obscalesFinished = true;
 								
 								continue;
 							}
+							if(randForType >= 2){
+								createObscale(ObscaleType.DynamicObscaleDown,step.transform,i);
+								
+								continue;
+						}
 						}
 						
 						
