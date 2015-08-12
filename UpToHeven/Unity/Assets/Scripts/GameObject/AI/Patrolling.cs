@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PatrollingDirection
+{
+	left,right
+};
+
 public class Patrolling : Stategy {
 
 	// Use this for initialization
 	public ObjectVision objectVision;
 	public Moving moving;
+	public PatrollingDirection direction;
 	void Start () {
 
-		int rand = Random.Range (0, 2);
-		if (rand == 1) {
-			moving.RotateLeft();	
-		} else {
-			moving.RotateRight();
-		}
-				
+		moving.ToDirection (direction == PatrollingDirection.left ? MovingDirection.left : MovingDirection.right);
 	}
 	
 	// Update is called once per frame

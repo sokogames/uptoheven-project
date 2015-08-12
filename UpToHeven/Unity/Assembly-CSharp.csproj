@@ -68,7 +68,10 @@
      <Compile Include="Assets\Scripts\GameObject\PlayerVision.cs" />
      <Compile Include="Assets\Scripts\GameObject\RemoveAfterTime.cs" />
      <Compile Include="Assets\Scripts\GameObject\Stairway.cs" />
+     <Compile Include="Assets\Scripts\GameObject\Stairway\Chunk.cs" />
+     <Compile Include="Assets\Scripts\GameObject\Stairway\StepPart.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
+     <Compile Include="Assets\Scripts\UI\GamePanel.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
