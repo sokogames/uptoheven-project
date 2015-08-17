@@ -11,9 +11,7 @@ public class Main : MonoBehaviour {
 	void Start () {
 		GameController controller = (GameController)controllers [GAME_PLAY];
 		controller.player.playerPref = globalData.PlayerPref;
-		controller.stairway.stepPartPref = globalData.stepPartPref;
-		controller.obscaleController.staticObscalesPrefs = globalData.staticObscalesPrefs;
-		controller.obscaleController.dynamicObscalePrefs = globalData.dynamicObscalesPrefs;
+		//controller.stairway.stepPartPref = globalData.stepPartPref;
 		controller.init ();
 	}
 	

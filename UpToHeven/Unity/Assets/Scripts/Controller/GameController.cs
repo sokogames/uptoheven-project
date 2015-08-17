@@ -28,7 +28,7 @@ public class GameController : Controller {
 
 		actions.actor = player;
 		//init stairway
-		stairway.Generate (obscaleController);
+		//stairway.Generate (obscaleController);
 		inputHandler = (InputHandler)gameObject.AddComponent<InputHandler> ();
 
 	}
@@ -66,8 +66,8 @@ public class GameController : Controller {
 			break;
 		}
 
-		if (stairway.lastStepIndex - player.currentStepPostiion < distanceToNextStep) {
-			stairway.AddNextStep();
+		if (stairway.totalSteps - player.currentStepPostion < distanceToNextStep) {
+			stairway.addRandomChunk();
 		}
 
 	}

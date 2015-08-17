@@ -13693,7 +13693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7c8d9231f6288459fe6e30889ba257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: 0
+  nextChunk: {fileID: 0}
+  fallOnStart: 0
   fallDelta: .100000001
   stepPrefix: step
   stepPartPrefix: stepPart
@@ -13743,6 +13744,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: childPrefix
       value: step
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fall
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

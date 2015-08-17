@@ -13,6 +13,6 @@ public class GamePanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = player.currentStepPostiion.ToString();
+		text.text = player.currentStepPostion.ToString();
 	}
 }

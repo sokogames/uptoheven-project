@@ -5,8 +5,8 @@ public class Player : MonoBehaviour, IActor {
 
 	public Moving movingScript;
 	public GameObject playerPref;
-	public int currentStepPostiion = 0;
-	public int _currentStepPostiion = 0;
+	public int currentStepPostion = 0;
+	public int _currentStepPostion = 0;
 
 	public bool enemyTouched = false;
 
@@ -30,10 +30,10 @@ public class Player : MonoBehaviour, IActor {
 	public void ReadyForJump(MovingDirection toDirection){
 
 		if (toDirection == MovingDirection.forward) {
-			_currentStepPostiion ++;
+			_currentStepPostion ++;
 		}
 		if (toDirection == MovingDirection.back) {
-			_currentStepPostiion --;
+			_currentStepPostion --;
 		}
 
 		anim.SetTrigger ("readyForJump");
@@ -72,8 +72,8 @@ public class Player : MonoBehaviour, IActor {
 		landed = true;
 		anim.SetTrigger("landed");
 
-		if (currentStepPostiion != _currentStepPostiion) {
-			currentStepPostiion = _currentStepPostiion;
+		if (currentStepPostion != _currentStepPostion) {
+			currentStepPostion = _currentStepPostion;
 		}
 	}
 	void OnCollisionEnter(Collision collision){

@@ -3,14 +3,15 @@ using System.Collections;
 
 public class Chunk : MonoBehaviour {
 
-	public bool fall = false;
+	public Chunk nextChunk;
+	public bool fallOnStart = false;
 
 	public float fallDelta;
 	public string stepPrefix;
 	public string stepPartPrefix;
 	// Use this for initialization
 	void Start () {
-		if (fall) {
+		if (fallOnStart) {
 			Fall ();
 		}
 	}
@@ -40,5 +41,11 @@ public class Chunk : MonoBehaviour {
 				stepPart.GetComponent<StepPart> ().Fall ();
 			}
 		}
+
+		if (nextChunk) {
+			nextChunk.Fall ();
+		}
+
+		Destroy (gameObject);
 	}
 }
