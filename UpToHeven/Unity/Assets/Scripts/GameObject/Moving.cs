@@ -99,9 +99,7 @@ public class Moving : MonoBehaviour {
 		GetComponent<Rigidbody> ().velocity = velocity;
 		
 		if (velocity.magnitude < 0.1f && velocity.magnitude != 0.0f) {
-			if(GetComponent<Player>()){
-				GetComponent<Player>().Landed();
-			}
+
 			transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y , Mathf.RoundToInt(transform.position.z));
 		}
 	}

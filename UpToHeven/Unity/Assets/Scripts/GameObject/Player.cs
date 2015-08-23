@@ -1,85 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour, IActor {
+public class Player : MonoBehaviour {
 
-	public Moving movingScript;
-	public GameObject playerPref;
+	public GameObject playerBody;
 	public int currentStepPostion = 0;
-	public int _currentStepPostion = 0;
+	private int _currentStepPostion = 0;
 
 	public bool enemyTouched = false;
 
 	private Animator anim;
 	private bool landed = true;
+	private Rigidbody rigidBody;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-
+		rigidBody = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (rigidBody.velocity != Vector3.zero && landed) {
+			Jump();
+		}
+
+		if (rigidBody.velocity == Vector3.zero && !landed) {
+			Landed();
+		}
 	}
-	public void Jump(){
-		//anim.SetTrigger("readyForJump");
-		movingScript.Jump ();
+
+	private void Jump(){
 		landed = false;
-	}
-	public void ReadyForJump(MovingDirection toDirection){
+		anim.SetTrigger("readyForJump");
 
-		if (toDirection == MovingDirection.forward) {
-			_currentStepPostion ++;
-		}
-		if (toDirection == MovingDirection.back) {
-			_currentStepPostion --;
-		}
-
-		anim.SetTrigger ("readyForJump");
-		if(movingScript.currentDirection == toDirection){
-			return;
-		}
-
-		while(movingScript.currentDirection != toDirection){
-			movingScript.RotateLeft();
-		}
 	}
-
-	public void Left(){
-		while(movingScript.currentDirection != MovingDirection.left){
-			movingScript.RotateLeft();
-		}
-		movingScript.Jump ();
-	}
-	public void Right(){
-		while(movingScript.currentDirection != MovingDirection.right){
-			movingScript.RotateRight();
-		}
-		movingScript.Jump ();
-	}
-	public void Down(){
-		while(movingScript.currentDirection != MovingDirection.back){
-			movingScript.RotateRight();
-		}
-		movingScript.Jump ();
-	}
-	public void Landed(){
+	private void Landed(){
 
 		if (landed)
 			return;
 
 		landed = true;
-		anim.SetTrigger("landed");
 
-		if (currentStepPostion != _currentStepPostion) {
-			currentStepPostion = _currentStepPostion;
-		}
+		_currentStepPostion = (int)transform.position.z;
+		currentStepPostion = Mathf.Max (_currentStepPostion, currentStepPostion);
+
+		anim.SetTrigger("landed");
 	}
 	void OnCollisionEnter(Collision collision){
 		if (collision.collider.gameObject.tag == "DynamicObscale") {
 			enemyTouched = true;
 			anim.SetTrigger("dead");
+			StopPhysics();
 		}
+	}
+	void StopPhysics(){
+		GetComponent<BoxCollider>().enabled = false;
+		GetComponent<Rigidbody>().isKinematic = true;
 	}
 }

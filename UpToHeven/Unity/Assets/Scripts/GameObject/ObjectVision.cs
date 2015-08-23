@@ -4,7 +4,6 @@ using System.Collections;
 public class ObjectVision : MonoBehaviour {
 
 	public string barrierTagName;
-	public string edgeTagName;
 	public float visionDistance;
 	public Vector3 barrierCheckOffset;
 	public Vector3 edgeCheckOffset;
@@ -59,7 +58,7 @@ public class ObjectVision : MonoBehaviour {
 		
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
 			
-			if(hitInfo.collider.gameObject.tag == edgeTagName)
+			if(hitInfo.collider.gameObject != null)
 				return false;
 		}
 		

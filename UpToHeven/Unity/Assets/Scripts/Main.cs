@@ -10,7 +10,7 @@ public class Main : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameController controller = (GameController)controllers [GAME_PLAY];
-		controller.player.playerPref = globalData.PlayerPref;
+		controller.player.playerBody = globalData.PlayerPref;
 		//controller.stairway.stepPartPref = globalData.stepPartPref;
 		controller.init ();
 	}

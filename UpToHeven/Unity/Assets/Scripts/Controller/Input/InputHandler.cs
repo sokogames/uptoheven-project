@@ -5,6 +5,7 @@ public enum InputCommand{Left,Right,Up,Down,Realese,None};
 
 public class InputHandler : MonoBehaviour {
 
+	public float touchSension = 80.0f;
 	delegate InputCommand CommandDelgate();
 
 	CommandDelgate command;
@@ -25,7 +26,7 @@ public class InputHandler : MonoBehaviour {
 		return command();
 
 	}
-	private InputCommand MobileCommand(){
+	private InputCommand MobileCommandOld(){
 		Touch touch = Input.GetTouch (0);
 		Vector2 fp = Vector2.zero;
 		Vector2 lp = Vector2.zero;
@@ -44,20 +45,60 @@ public class InputHandler : MonoBehaviour {
 		{
 			lp = touch.position;
 			
-			if((fp.x - lp.x) > 80) // left swipe
+			if((fp.x - lp.x) > touchSension) // left swipe
 			{
 				return InputCommand.Left;
 			}
-			else if((fp.x - lp.x) < -80) // right swipe
+			if((fp.x - lp.x) < -touchSension) // right swipe
 			{
 				return InputCommand.Right;
 			}
-			else if((fp.y - lp.y) < -80 ) // up swipe
+			if((fp.y - lp.y) < -touchSension ) // up swipe
 			{
 				return InputCommand.Up;
-			}else if((fp.y - lp.y) > 80 ) // down swipe
+			}
+			if((fp.y - lp.y) > touchSension ) // down swipe
 			{
 				return InputCommand.Down;
+			}
+		}
+		return InputCommand.None;
+	}
+	private InputCommand MobileCommand(){
+
+		if (Input.touchCount != 1)
+			return InputCommand.None;
+
+		Touch touch = Input.GetTouch (0);
+		
+		if (touch.phase == TouchPhase.Ended) {
+			
+			return InputCommand.Realese;	
+		}
+		
+		if (touch.phase == TouchPhase.Moved)
+		{
+			Vector2 delta = touch.deltaPosition;
+
+			if(Mathf.Abs (delta.x) > Mathf.Abs (delta.y)){
+
+				if(delta.x < 0){
+					return InputCommand.Left;
+				}
+			
+				if(delta.x > 0){
+					return InputCommand.Right;
+				}
+
+			}else{
+
+				if(delta.y > 0){
+					return InputCommand.Up;
+				}
+
+				if(delta.y < 0){
+					return InputCommand.Down;
+				}
 			}
 		}
 		return InputCommand.None;

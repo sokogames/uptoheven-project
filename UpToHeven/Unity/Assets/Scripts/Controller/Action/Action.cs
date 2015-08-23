@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum ActionType{readyForJump,jump}; 
-public class Action{
+public abstract class Action {
 
-	public ActionType type;
-	public MovingDirection jumpDirection;
-	public float actionTime;
+	protected GameObject receiver;
+	protected string message; 
 
-	public Action(ActionType type, float actionTime, MovingDirection direction = MovingDirection.forward){
-
-		this.type = type;
-		this.jumpDirection = direction;
-		this.actionTime = actionTime;
+	public Action(GameObject reciever, string message){
+		this.receiver = receiver;
+		this.message = message;
 
 	}
+	public abstract void Do ();
+	public abstract IEnumerator IsDone();
 }
