@@ -881,7 +881,8 @@ MonoBehaviour:
   chunks:
   - {fileID: 168342, guid: b419e58b33083ff4ebce509c5a767095, type: 2}
   - {fileID: 140144, guid: d6af05908f553244896375c4db96d6ce, type: 2}
-  - {fileID: 168342, guid: b419e58b33083ff4ebce509c5a767095, type: 2}
+  - {fileID: 192292, guid: bc23085f413bd4f48895cb3215cdd7c2, type: 2}
+  - {fileID: 173808, guid: 5514ae8208fd50d4d8ccc9723ba0f1ac, type: 2}
 --- !u!4 &2129076751
 Transform:
   m_ObjectHideFlags: 0
