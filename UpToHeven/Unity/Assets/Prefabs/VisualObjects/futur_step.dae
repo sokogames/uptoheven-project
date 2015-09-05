@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Minddesk Qubicle 2</authoring_tool>
+      <comments>Get Qubicle at www.minddesk.com</comments>
+    </contributor>
+    <created>2015-08-278:58 AM08:58:50:987</created>
+    <modified>2015-08-278:58 AM08:58:50:987</modified>
+    <unit meter="0.01" />
+  </asset>
+  <library_images>
+    <image id="futur_step-image" name="futur_step-image">
+      <init_from>file:///Materials/futur_step.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="futur_step-material" name="futur_step-material">
+      <instance_effect url="#futur_step-shader-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="futur_step-shader-fx" name="futur_step-shader-fx">
+      <profile_COMMON>
+        <newparam sid="futur_step-image-surface">
+          <surface type="2D">
+            <init_from>futur_step-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="futur_step-image-sampler">
+          <sampler2D>
+            <source>futur_step-image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NEAREST</minfilter>
+            <magfilter>NEAREST</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <lambert>
+            <ambient>
+              <color sid="ambient">0.0 0.0 0.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="CHANNEL0" texture="futur_step-image-sampler" />
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry name="Box_17" id="Box_17-lib">
+      <mesh>
+        <source id="Box_17-position">
+          <float_array id="Box_17-position-array" count="144">20.5 5.0 -0.5 20.5 0.0 -0.5 -0.5 0.0 -0.5 -0.5 5.0 -0.5 18.5 5.0 5.5 18.5 0.0 5.5 1.5 0.0 5.5 1.5 5.0 5.5 18.5 5.0 12.5 18.5 0.0 12.5 1.5 0.0 12.5 1.5 5.0 12.5 18.5 5.0 18.5 18.5 0.0 18.5 1.5 0.0 18.5 1.5 5.0 18.5 -0.5 5.0 20.5 -0.5 0.0 20.5 20.5 0.0 20.5 20.5 5.0 20.5 1.5 5.0 1.5 1.5 0.0 1.5 18.5 0.0 1.5 18.5 5.0 1.5 1.5 5.0 7.5 1.5 0.0 7.5 18.5 0.0 7.5 18.5 5.0 7.5 1.5 5.0 14.5 1.5 0.0 14.5 18.5 0.0 14.5 18.5 5.0 14.5 1.5 5.0 20.5 1.5 5.0 -0.5 19.5 5.0 1.5 19.5 5.0 -0.5 19.5 5.0 7.5 19.5 5.0 5.5 18.5 5.0 20.5 20.5 5.0 7.5 1.5 0.0 -0.5 1.5 0.0 20.5 19.5 0.0 -0.5 19.5 0.0 1.5 19.5 0.0 5.5 19.5 0.0 7.5 18.5 0.0 20.5 20.5 0.0 7.5 </float_array>
+          <technique_common>
+            <accessor source="Box_17-position-array" stride="3" count="48">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_17-normal">
+          <float_array id="Box_17-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_17-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_17-uv">
+          <float_array id="Box_17-uv-array" count="256">0.015625 0.34375 0.015625 0.015625 0.046875 0.015625 0.046875 0.34375 0.078125 0.34375 0.078125 0.015625 0.109375 0.015625 0.109375 0.34375 0.140625 0.21875 0.140625 0.015625 0.171875 0.015625 0.171875 0.21875 0.203125 0.21875 0.203125 0.015625 0.234375 0.015625 0.234375 0.21875 0.265625 0.140625 0.265625 0.015625 0.28125 0.015625 0.28125 0.140625 0.3125 0.140625 0.3125 0.015625 0.328125 0.015625 0.328125 0.140625 0.359375 0.09375 0.359375 0.015625 0.6875 0.015625 0.6875 0.09375 0.140625 0.328125 0.140625 0.25 0.46875 0.25 0.46875 0.328125 0.5 0.328125 0.5 0.25 0.828125 0.25 0.828125 0.328125 0.015625 0.453125 0.015625 0.375 0.34375 0.375 0.34375 0.453125 0.71875 0.09375 0.71875 0.015625 0.984375 0.015625 0.984375 0.09375 0.375 0.453125 0.375 0.375 0.640625 0.375 0.640625 0.453125 0.671875 0.453125 0.671875 0.375 0.9375 0.375 0.9375 0.453125 0.015625 0.5625 0.015625 0.484375 0.28125 0.484375 0.28125 0.5625 0.3125 0.5625 0.3125 0.484375 0.578125 0.484375 0.578125 0.5625 0.609375 0.5625 0.609375 0.484375 0.875 0.484375 0.875 0.5625 0.859375 0.328125 0.859375 0.25 0.9375 0.25 0.9375 0.328125 0.90625 0.5625 0.90625 0.484375 0.984375 0.484375 0.984375 0.5625 0.015625 0.671875 0.015625 0.59375 0.078125 0.59375 0.078125 0.671875 0.109375 0.671875 0.109375 0.59375 0.171875 0.59375 0.171875 0.671875 0.203125 0.671875 0.203125 0.59375 0.265625 0.59375 0.265625 0.671875 0.296875 0.671875 0.296875 0.59375 0.359375 0.59375 0.359375 0.671875 0.96875 0.3125 0.96875 0.25 0.984375 0.25 0.984375 0.3125 0.96875 0.4375 0.96875 0.375 0.984375 0.375 0.984375 0.4375 0.265625 0.203125 0.265625 0.171875 0.546875 0.171875 0.546875 0.203125 0.578125 0.203125 0.578125 0.171875 0.859375 0.171875 0.859375 0.203125 0.390625 0.625 0.390625 0.59375 0.671875 0.59375 0.671875 0.625 0.703125 0.625 0.703125 0.59375 0.984375 0.59375 0.984375 0.625 0.015625 0.734375 0.015625 0.703125 0.28125 0.703125 0.28125 0.734375 0.3125 0.734375 0.3125 0.703125 0.578125 0.703125 0.578125 0.734375 0.609375 0.734375 0.609375 0.703125 0.875 0.703125 0.875 0.734375 0.015625 0.796875 0.015625 0.765625 0.28125 0.765625 0.28125 0.796875 </float_array>
+          <technique_common>
+            <accessor source="Box_17-uv-array" stride="2" count="128">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_17-vertex">
+          <input semantic="POSITION" source="#Box_17-position" />
+        </vertices>
+        <polylist material="futur_step-material" count="32">
+          <input offset="0" semantic="VERTEX" source="#Box_17-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_17-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_17-uv" />
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 1 32 1 1 33 2 1 34 3 1 35 4 1 52 5 1 53 6 1 54 7 1 55 8 1 48 9 1 49 10 1 50 11 1 51 12 1 60 13 1 61 14 1 62 15 1 63 16 0 36 17 0 37 18 0 38 19 0 39 20 0 56 21 0 57 22 0 58 23 0 59 24 0 44 25 0 45 26 0 46 27 0 47 28 0 40 29 0 41 30 0 42 31 0 43 3 2 28 2 2 29 17 2 30 16 2 31 27 2 68 26 2 69 9 2 70 8 2 71 23 2 72 22 2 73 5 2 74 4 2 75 31 2 76 30 2 77 13 2 78 12 2 79 19 3 24 18 3 25 1 3 26 0 3 27 11 3 64 10 3 65 25 3 66 24 3 67 7 3 84 6 3 85 21 3 86 20 3 87 15 3 80 14 3 81 29 3 82 28 3 83 3 4 4 16 4 5 32 4 6 33 4 7 33 4 104 20 4 105 34 4 106 35 4 107 7 4 108 24 4 109 36 4 110 37 4 111 11 4 116 28 4 117 31 4 118 8 4 119 15 4 120 32 4 121 38 4 122 12 4 123 27 4 8 38 4 9 19 4 10 39 4 11 35 4 16 36 4 17 39 4 18 0 4 19 23 4 88 4 4 89 37 4 90 34 4 91 17 5 0 2 5 1 40 5 2 41 5 3 21 5 96 40 5 97 42 5 98 43 5 99 25 5 100 6 5 101 44 5 102 45 5 103 29 5 124 10 5 125 9 5 126 30 5 127 41 5 112 14 5 113 13 5 114 46 5 115 46 5 12 26 5 13 47 5 14 18 5 15 45 5 20 42 5 21 1 5 22 47 5 23 5 5 92 22 5 93 43 5 94 44 5 95 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="futur_step-scene" name="futur_step-scene">
+      <node sid="Box_17" id="Box_17" name="Box_17">
+        <translate sid="translate">-47.50 0.00 60.50</translate>
+        <instance_geometry url="#Box_17-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="futur_step-material" target="#futur_step-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene name="" sid="" url="#futur_step-scene" />
+  </scene>
+</COLLADA>
