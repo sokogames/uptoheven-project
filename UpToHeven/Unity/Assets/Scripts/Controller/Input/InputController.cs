@@ -31,7 +31,7 @@ public class InputController : MonoBehaviour {
 				break;
 			case InputCommand.Realese:
 				actions.AddAction(new JumpAction(actions.gameObject));
-				//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
 				break;
 			default:
 				break;

@@ -18,13 +18,16 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																																																																																									GlobalSection(MonoDevelopProperties) = preSolution
 =======
+																																																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of f9d42c5... Merge remote-tracking branch 'origin/master'
+=======
 																																																																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Stashed changes
->>>>>>> origin/master
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

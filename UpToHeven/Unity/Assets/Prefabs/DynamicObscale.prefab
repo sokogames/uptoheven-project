@@ -181,9 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrierTagName: StaticObscale
+  edgeTagName: StepPart
   visionDistance: 1
   barrierCheckOffset: {x: 0, y: 0, z: 0}
-  edgeCheckOffset: {x: 0, y: .600000024, z: 0}
+  edgeCheckOffset: {x: 0, y: .200000003, z: 0}
 --- !u!114 &11499086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,10 +261,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: jumpDistanceOnSide
       value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: edgeCheckOffset.y
-      value: .600000024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
