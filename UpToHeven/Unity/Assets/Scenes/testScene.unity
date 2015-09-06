@@ -120,7 +120,7 @@ MonoBehaviour:
   chunkPosIncremental: {x: 0, y: 2, z: 10}
   chunks:
   - {fileID: 168342, guid: b419e58b33083ff4ebce509c5a767095, type: 2}
-  - {fileID: 140144, guid: d6af05908f553244896375c4db96d6ce, type: 2}
+  - {fileID: 0}
 --- !u!4 &111696238
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_Children:
   - {fileID: 1449810987}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &352703519
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1160676892
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &1255561820
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1302933780
 GameObject:
   m_ObjectHideFlags: 0
