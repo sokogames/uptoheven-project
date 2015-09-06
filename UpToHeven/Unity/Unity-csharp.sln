@@ -18,6 +18,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
 =======
 <<<<<<< HEAD
@@ -29,6 +30,9 @@ Global
 																																																																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Stashed changes
 >>>>>>> origin/master
+=======
+																																																																																																																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of 33463b6... main სცენაზე გადავაიტანე ახალი ჩანკები
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
