@@ -166,8 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d640f72fb3c74904392fecd5e4e201cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierTagName: StaticObscale
-  edgeTagName: StepPart
+  barrierTagName: DynamicObscale
   visionDistance: 1
   barrierCheckOffset: {x: 0, y: .300000012, z: 0}
   edgeCheckOffset: {x: 0, y: .5, z: 0}
@@ -247,7 +246,7 @@ Prefab:
       objectReference: {fileID: 11441870}
     - target: {fileID: 0}
       propertyPath: barrierTagName
-      value: StaticObscale
+      value: DynamicObscale
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: edgeCheckOffset.y
