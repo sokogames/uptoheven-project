@@ -15320,7 +15320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 20
 --- !u!4 &1919032390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 406638, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}

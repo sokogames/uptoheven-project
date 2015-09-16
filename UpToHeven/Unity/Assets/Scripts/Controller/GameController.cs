@@ -42,7 +42,8 @@ public class GameController : Controller {
 		}
 
 	}
-	void GameOver(){
+	public void GameOver(){
+		Debug.Log ("game over");
 		Application.LoadLevelAsync(0);
 	}
 }

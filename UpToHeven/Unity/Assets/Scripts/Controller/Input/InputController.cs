@@ -17,6 +17,10 @@ public class InputController : MonoBehaviour {
 			InputCommand command = inputHandler.InputHandle();
 			
 			switch (command) {
+			case InputCommand.Tap:
+				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+				actions.AddAction(new JumpAction(actions.gameObject));
+				break;
 			case InputCommand.Left: 
 				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_LEFT));
 				break;
