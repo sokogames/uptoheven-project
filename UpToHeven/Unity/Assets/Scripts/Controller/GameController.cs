@@ -7,6 +7,7 @@ public class GameController : Controller {
 	public Stairway stairway;
 	public ObscaleController obscaleController;
 	public int distanceToNextStep = 10;
+	public float stepHeight = 0.2f;	
 
 	public float playerJumpTime;
 	public float playerRedyForJumpTime;
@@ -39,6 +40,9 @@ public class GameController : Controller {
 		}
 		if (player.enemyTouched) {
 			Invoke("GameOver",2.0f);
+		}
+		if (player.transform.position.y < (player.currentStepPostion - 10) * stepHeight) {
+			Invoke("GameOver",1.0f);
 		}
 
 	}

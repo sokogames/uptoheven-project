@@ -14017,6 +14017,7 @@ MonoBehaviour:
   stairway: {fileID: 2129076750}
   obscaleController: {fileID: 0}
   distanceToNextStep: 15
+  stepHeight: .200000003
   playerJumpTime: .200000003
   playerRedyForJumpTime: .200000003
   actions: {fileID: 0}
@@ -14051,6 +14052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a46fefc7e036b4ca9a7b329a8c7503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSpeedScale: 1.29999995
   globalData: {fileID: 1788795206}
   controllers:
   - {fileID: 1788795205}
@@ -15945,7 +15947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextChunk: {fileID: 0}
   fallOnStart: 1
-  fallDelta: .100000001
+  fallDelta: .200000003
   stepPrefix: step
   stepPartPrefix: stepPart
 --- !u!1 &1980300739

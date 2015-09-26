@@ -15119,7 +15119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextChunk: {fileID: 0}
   fallOnStart: 0
-  fallDelta: .100000001
+  fallDelta: .200000003
   stepPrefix: step
   stepPartPrefix: stepPart
 --- !u!114 &11404402
@@ -15730,7 +15730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrierTagName: StaticObscale
-  edgeTagName: StepPart
   visionDistance: 1
   barrierCheckOffset: {x: 0, y: .300000012, z: 0}
   edgeCheckOffset: {x: 0, y: .5, z: 0}
@@ -16149,7 +16148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrierTagName: StaticObscale
-  edgeTagName: StepPart
   visionDistance: 1
   barrierCheckOffset: {x: 0, y: 0, z: 0}
   edgeCheckOffset: {x: 0, y: .600000024, z: 0}
@@ -16319,6 +16317,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: fall
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fallDelta
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
