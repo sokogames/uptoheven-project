@@ -4123,7 +4123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188814}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 2.35000014, y: .162915915, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492972}
@@ -5776,7 +5776,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.8756838, y: 7.44443607, z: -10.0723162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479298}
@@ -13634,8 +13634,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingScript: {fileID: 11431038}
-  actionTime: 1
+  actionTime: 4
   strategy: {fileID: 11419214}
+  stepsToRest: 0
+  restTiem: 1
 --- !u!114 &11407276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13736,8 +13738,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingScript: {fileID: 11493764}
-  actionTime: 1
+  actionTime: 3
   strategy: {fileID: 11494134}
+  stepsToRest: 0
+  restTiem: 1
 --- !u!114 &11413566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14763,8 +14767,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingScript: {fileID: 11410642}
-  actionTime: 1
+  actionTime: 3
   strategy: {fileID: 11436742}
+  stepsToRest: 0
+  restTiem: 1
 --- !u!114 &11494134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14829,6 +14835,8 @@ MonoBehaviour:
   movingScript: {fileID: 11405614}
   actionTime: 1
   strategy: {fileID: 11413566}
+  stepsToRest: 0
+  restTiem: 1
 --- !u!114 &11499836
 MonoBehaviour:
   m_ObjectHideFlags: 1

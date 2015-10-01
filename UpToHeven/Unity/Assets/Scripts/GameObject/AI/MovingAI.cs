@@ -7,10 +7,16 @@ public class MovingAI : MonoBehaviour {
 	public float actionTime;
 	public Stategy strategy;
 
+	public int stepsToRest = 0;
+	public float restTiem = 1.0f;
+
+
 	private float currentActionTime;
+	private int stepCounter;
 	// Use this for initialization
 	void Start () {
-		currentActionTime = Random.Range (0.0f, actionTime);
+		currentActionTime = Random.Range (0.0f, (float)actionTime * 2);
+		stepCounter = 0;
 		StartCoroutine("DoAction");
 	}
 	
@@ -21,13 +27,21 @@ public class MovingAI : MonoBehaviour {
 	IEnumerator DoAction(){
 	
 		while (true) {
-				
+			if(stepsToRest > 0 ){
+				Debug.Log (stepsToRest);	
+				Debug.Log (stepCounter);
+				Debug.Log ("=====");
+			}
+
 			yield return new WaitForSeconds (currentActionTime);
 
-			currentActionTime = actionTime;
+			currentActionTime = (stepCounter == stepsToRest && stepsToRest > 0 ? restTiem : actionTime);
 
 			strategy.Action();		
-				
+
+			if(stepsToRest > 0){
+				stepCounter = ++stepCounter % (stepsToRest + 1);
+			}
 		}
 	
 	}

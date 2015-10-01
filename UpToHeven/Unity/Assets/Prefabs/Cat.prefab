@@ -1,18 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &165950
+--- !u!1 &161346
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 410016}
-  - 33: {fileID: 3317874}
-  - 23: {fileID: 2334112}
-  - 95: {fileID: 9543838}
+  - 4: {fileID: 476148}
+  - 33: {fileID: 3341390}
+  - 23: {fileID: 2397744}
+  - 95: {fileID: 9599718}
   m_Layer: 0
-  m_Name: Grand_Mother
+  m_Name: Cat_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,18 +33,18 @@ GameObject:
   - 65: {fileID: 6512564}
   - 114: {fileID: 11402258}
   m_Layer: 0
-  m_Name: DynamicObscale
+  m_Name: Cat
   m_TagString: DynamicObscale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &410016
+--- !u!4 &476148
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165950}
+  m_GameObject: {fileID: 161346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -61,20 +61,20 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 410016}
+  - {fileID: 476148}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2334112
+--- !u!23 &2397744
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165950}
+  m_GameObject: {fileID: 161346}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: fe77fae7da01f2f4cb8f8044de6d84e5, type: 2}
+  - {fileID: 2100000, guid: 9616ee10a99834aa58f455e76ddfe385, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -88,13 +88,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3317874
+--- !u!33 &3341390
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165950}
-  m_Mesh: {fileID: 4300000, guid: ae4e35ac347cc9e4faf6c18d2b64e7cb, type: 3}
+  m_GameObject: {fileID: 161346}
+  m_Mesh: {fileID: 4300000, guid: 60360086720ab41dc9982728572ddf59, type: 3}
 --- !u!54 &5461614
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -122,15 +122,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .5, y: 1, z: .400000006}
   m_Center: {x: 0, y: .5, z: -.100000001}
---- !u!95 &9543838
+--- !u!95 &9599718
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165950}
+  m_GameObject: {fileID: 161346}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ae4e35ac347cc9e4faf6c18d2b64e7cb, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 60360086720ab41dc9982728572ddf59, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingScript: {fileID: 11427040}
-  actionTime: 3
+  actionTime: 1
   strategy: {fileID: 11402258}
-  stepsToRest: 0
-  restTiem: 1
+  stepsToRest: 1
+  restTiem: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -217,7 +217,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: actionTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strategy
@@ -266,6 +266,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: edgeCheckOffset.y
       value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stepsToRest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: restTiem
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
