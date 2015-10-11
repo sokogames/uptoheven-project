@@ -27,11 +27,6 @@ public class MovingAI : MonoBehaviour {
 	IEnumerator DoAction(){
 	
 		while (true) {
-			if(stepsToRest > 0 ){
-				Debug.Log (stepsToRest);	
-				Debug.Log (stepCounter);
-				Debug.Log ("=====");
-			}
 
 			yield return new WaitForSeconds (currentActionTime);
 

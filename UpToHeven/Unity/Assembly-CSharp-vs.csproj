@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\GameObject\AI\Stategy.cs" />
      <Compile Include="Assets\Scripts\GameObject\AI\SteppingDown.cs" />
      <Compile Include="Assets\Scripts\GameObject\AI\Strategy.cs" />
+     <Compile Include="Assets\Scripts\GameObject\Fatalit.cs" />
      <Compile Include="Assets\Scripts\GameObject\Moving.cs" />
      <Compile Include="Assets\Scripts\GameObject\ObjectVision.cs" />
      <Compile Include="Assets\Scripts\GameObject\Player.cs" />

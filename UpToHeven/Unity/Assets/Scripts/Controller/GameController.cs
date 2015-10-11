@@ -12,6 +12,8 @@ public class GameController : Controller {
 	public float playerJumpTime;
 	public float playerRedyForJumpTime;
 
+	public float gameOverDelta = 3.0f;
+
 	public ActionManager actions;
 
 	public void init(){
@@ -39,7 +41,7 @@ public class GameController : Controller {
 			stairway.addRandomChunk();
 		}
 		if (player.enemyTouched) {
-			Invoke("GameOver",2.0f);
+			Invoke("GameOver",gameOverDelta);
 		}
 		if (player.transform.position.y < (player.currentStepPostion - 10) * stepHeight) {
 			Invoke("GameOver",1.0f);

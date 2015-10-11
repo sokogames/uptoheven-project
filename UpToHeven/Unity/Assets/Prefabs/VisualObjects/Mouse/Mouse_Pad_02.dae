@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Minddesk Qubicle 2</authoring_tool>
+      <comments>Get Qubicle at www.minddesk.com</comments>
+    </contributor>
+    <created>2015-10-1110:28 AM10:28:35:073</created>
+    <modified>2015-10-1110:28 AM10:28:35:073</modified>
+    <unit meter="0.01" />
+  </asset>
+  <library_images>
+    <image id="Mouse_Pad_02-image" name="Mouse_Pad_02-image">
+      <init_from>file:///Materials/Mouse_Pad_02.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Mouse_Pad_02-material" name="Mouse_Pad_02-material">
+      <instance_effect url="#Mouse_Pad_02-shader-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Mouse_Pad_02-shader-fx" name="Mouse_Pad_02-shader-fx">
+      <profile_COMMON>
+        <newparam sid="Mouse_Pad_02-image-surface">
+          <surface type="2D">
+            <init_from>Mouse_Pad_02-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Mouse_Pad_02-image-sampler">
+          <sampler2D>
+            <source>Mouse_Pad_02-image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NEAREST</minfilter>
+            <magfilter>NEAREST</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <lambert>
+            <ambient>
+              <color sid="ambient">0.0 0.0 0.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="CHANNEL0" texture="Mouse_Pad_02-image-sampler" />
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry name="Box_21" id="Box_21-lib">
+      <mesh>
+        <source id="Box_21-position">
+          <float_array id="Box_21-position-array" count="24">6.5 5.0 -6.5 6.5 0.0 -6.5 -6.5 0.0 -6.5 -6.5 5.0 -6.5 -6.5 5.0 6.5 -6.5 0.0 6.5 6.5 0.0 6.5 6.5 5.0 6.5 </float_array>
+          <technique_common>
+            <accessor source="Box_21-position-array" stride="3" count="8">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_21-normal">
+          <float_array id="Box_21-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_21-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_21-uv">
+          <float_array id="Box_21-uv-array" count="48">0.03125 0.4375 0.03125 0.03125 0.4375 0.03125 0.4375 0.4375 0.5 0.4375 0.5 0.03125 0.90625 0.03125 0.90625 0.4375 0.03125 0.65625 0.03125 0.5 0.4375 0.5 0.4375 0.65625 0.5 0.65625 0.5 0.5 0.90625 0.5 0.90625 0.65625 0.03125 0.875 0.03125 0.71875 0.4375 0.71875 0.4375 0.875 0.5 0.875 0.5 0.71875 0.90625 0.71875 0.90625 0.875 </float_array>
+          <technique_common>
+            <accessor source="Box_21-uv-array" stride="2" count="24">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_21-vertex">
+          <input semantic="POSITION" source="#Box_21-position" />
+        </vertices>
+        <polylist material="Mouse_Pad_02-material" count="6">
+          <input offset="0" semantic="VERTEX" source="#Box_21-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_21-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_21-uv" />
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 1 12 1 1 13 2 1 14 3 1 15 4 0 8 5 0 9 6 0 10 7 0 11 3 2 20 2 2 21 5 2 22 4 2 23 7 3 16 6 3 17 1 3 18 0 3 19 3 4 0 4 4 1 7 4 2 0 4 3 5 5 4 2 5 5 1 5 6 6 5 7 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Mouse_Pad_02-scene" name="Mouse_Pad_02-scene">
+      <node sid="Box_21" id="Box_21" name="Box_21">
+        <translate sid="translate">-0.50 0.00 53.50</translate>
+        <instance_geometry url="#Box_21-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Mouse_Pad_02-material" target="#Mouse_Pad_02-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene name="" sid="" url="#Mouse_Pad_02-scene" />
+  </scene>
+</COLLADA>
