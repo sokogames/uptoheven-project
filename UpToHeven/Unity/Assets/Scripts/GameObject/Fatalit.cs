@@ -25,8 +25,7 @@ public class Fatalit : MonoBehaviour {
 	}
 	void DisableSripts(){
 		foreach(MonoBehaviour monoBehaviour in scriptsToDisable){
-			monoBehaviour.enabled = false;
-			Debug.Log("disabled");
+			Destroy(monoBehaviour);
 		}
 	}
 
