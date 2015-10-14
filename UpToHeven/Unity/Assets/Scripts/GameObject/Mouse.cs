@@ -7,7 +7,7 @@ public class Mouse : MonoBehaviour {
 	public GameObject mouse;
 	public float liftSpeed;
 	public float mouseSpeed;
-
+	public float liftTime = 5.0f;
 	//moving part
 	private Vector3 movingPartPostion;
 
@@ -17,7 +17,7 @@ public class Mouse : MonoBehaviour {
 	private Vector3 movingPartLiftPostion; 
 	private Vector3 toPosition;
 
-	private int delay;
+	private float delay;
 
 	//mouse rotateion
 	private Quaternion toRotate; 
@@ -42,7 +42,7 @@ public class Mouse : MonoBehaviour {
 		movingPartPostion = movingPart.transform.position;
 		toPosition = movingPartPostion;
 		movingPartLiftPostion = movingPartPostion + new Vector3 (0,movingPartLiftDeep,0);
-		delay = (int)Random.Range (1, 4) * 5;
+		delay = (int)Random.Range (1, 4) * liftTime;
 
 		Invoke ("MovingPartLiftDown",delay);
 

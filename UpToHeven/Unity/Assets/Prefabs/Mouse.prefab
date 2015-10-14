@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingPart: {fileID: 167054}
   mouse: {fileID: 121032}
-  liftSpeed: 1
+  liftSpeed: 5
   mouseSpeed: 2
 --- !u!1001 &100100000
 Prefab:
@@ -344,6 +344,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: liftSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
