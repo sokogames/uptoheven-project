@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -1470,7 +1472,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1502,6 +1503,7 @@ MonoBehaviour:
   player: {fileID: 196528503}
   lerpSpeed: 2
   offset: {x: .0500000007, y: 5, z: 0}
+  scale: {x: 0, y: 0, z: 0}
 --- !u!1 &104185001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,6 +3147,7 @@ MonoBehaviour:
   stepHeight: .200000003
   playerJumpTime: 0
   playerRedyForJumpTime: 0
+  gameOverDelta: 3
   actions: {fileID: 254998791}
 --- !u!4 &254998789
 Transform:
@@ -3169,12 +3172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addd1d761158b234d901750fc34615d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepPartPref: {fileID: 100000, guid: 9d5e517f4c5e8d24581b8198d514ea38, type: 3}
-  stepPartCount: 15
-  stepPartCrashTime: 0
-  crashSteps: 0
-  initialStepsCount: 0
-  lastStepIndex: 0
 --- !u!114 &254998791
 MonoBehaviour:
   m_ObjectHideFlags: 0
