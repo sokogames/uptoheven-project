@@ -7,7 +7,9 @@ public class Mouse : MonoBehaviour {
 	public GameObject mouse;
 	public float liftSpeed;
 	public float mouseSpeed;
-	public float liftTime = 5.0f;
+	public float startLiftTime = 5.0f;
+	public float mouseTime = 5.0f;
+	public bool onlyOnce = false;
 	//moving part
 	private Vector3 movingPartPostion;
 
@@ -17,11 +19,11 @@ public class Mouse : MonoBehaviour {
 	private Vector3 movingPartLiftPostion; 
 	private Vector3 toPosition;
 
-	private float delay;
-
 	//mouse rotateion
 	private Quaternion toRotate; 
 	private float angle;
+
+	private float delay;
 
 	private bool isMouseOnAction {
 		get {
@@ -42,7 +44,7 @@ public class Mouse : MonoBehaviour {
 		movingPartPostion = movingPart.transform.position;
 		toPosition = movingPartPostion;
 		movingPartLiftPostion = movingPartPostion + new Vector3 (0,movingPartLiftDeep,0);
-		delay = (int)Random.Range (1, 4) * liftTime;
+		delay = (int)Random.Range (1, 4) * startLiftTime;
 
 		Invoke ("MovingPartLiftDown",delay);
 
@@ -57,12 +59,15 @@ public class Mouse : MonoBehaviour {
 			movingPart.transform.position = toPosition;
 			if (movingPart.transform.position == movingPartLiftPostion) {
 				//go up
-				Debug.Log ("down established");
+				//Debug.Log ("down established");
 				MovingPartLiftUp ();
 			} else {
-				//activate mouse
-				Debug.Log ("up established");
-				isMouseOnAction = true;
+
+				isMouseOnAction = mouse.activeSelf;
+				if(!onlyOnce){
+					float liftDownTime = isMouseOnAction ? mouseTime : delay;
+					Invoke("MovingPartLiftDown",liftDownTime);
+				}
 			}
 		} else {
 			movingPart.transform.position = Vector3.Lerp(movingPart.transform.position,toPosition,Time.deltaTime * liftSpeed);
@@ -77,12 +82,14 @@ public class Mouse : MonoBehaviour {
 		}
 	}
 	void MovingPartLiftDown(){
+		isMouseOnAction = false;
 		toPosition = movingPartLiftPostion;
 	}
 	void MovingPartLiftUp(){
 		toPosition = movingPartPostion;
 		RotateMouse ();
-		mouse.SetActive (true);
+		mouse.transform.rotation = Quaternion.identity;
+		mouse.SetActive (mouse.activeSelf ? false : true);
 	}
 	void RotateMouse(){
 		angle += (int)Random.Range (1, 3) == 1 ? -90.0f : 90.0f;
