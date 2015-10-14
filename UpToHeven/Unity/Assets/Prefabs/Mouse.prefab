@@ -334,6 +334,7 @@ MonoBehaviour:
   mouse: {fileID: 121032}
   liftSpeed: 5
   mouseSpeed: 2
+  liftTime: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -348,6 +349,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: liftSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: liftTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
