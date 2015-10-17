@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11477142}
   - 114: {fileID: 11477246}
   m_Layer: 0
-  m_Name: StepPart
+  m_Name: green
   m_TagString: StepPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

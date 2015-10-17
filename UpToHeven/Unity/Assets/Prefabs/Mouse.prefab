@@ -120,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00200000009, y: -7.14300013, z: .0199999996}
-  m_LocalScale: {x: 1.01062489, y: 30, z: 1.04669499}
+  m_LocalPosition: {x: 0, y: -7.14300013, z: 0}
+  m_LocalScale: {x: 1, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 494168}
   m_RootOrder: 0
@@ -334,7 +334,9 @@ MonoBehaviour:
   mouse: {fileID: 121032}
   liftSpeed: 5
   mouseSpeed: 2
-  liftTime: 1
+  startLiftTime: 5
+  mouseTime: 5
+  onlyOnce: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -353,6 +355,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: liftTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
