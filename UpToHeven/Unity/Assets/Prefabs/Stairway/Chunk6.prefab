@@ -13203,7 +13203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextChunk: {fileID: 0}
   fallOnStart: 0
-  fallDelta: .200000003
+  fallDelta: .150000006
   stepPrefix: step
   stepPartPrefix: stepPart
 --- !u!114 &11440272
@@ -13747,7 +13747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fallDelta
-      value: .200000003
+      value: .150000006
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x

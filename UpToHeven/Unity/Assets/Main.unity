@@ -14470,8 +14470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextChunk: {fileID: 0}
-  fallOnStart: 0
-  fallDelta: .200000003
+  fallOnStart: 1
+  fallDelta: .100000001
   stepPrefix: step
   stepPartPrefix: stepPart
 --- !u!1 &1980300739
@@ -15549,6 +15549,8 @@ MonoBehaviour:
   chunkPosIncremental: {x: 0, y: 2, z: 10}
   chunks:
   - {fileID: 168342, guid: b419e58b33083ff4ebce509c5a767095, type: 2}
+  - {fileID: 140144, guid: 7958029c0a49f754280fb614bc6e5f99, type: 2}
+  - {fileID: 192292, guid: bc23085f413bd4f48895cb3215cdd7c2, type: 2}
 --- !u!4 &2129076751
 Transform:
   m_ObjectHideFlags: 0
