@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ObjectVision : MonoBehaviour {
 
-	public string barrierTagName;
+	public string[] barrierTagName;
 	public float visionDistance;
 	public Vector3 barrierCheckOffset;
 	public Vector3 edgeCheckOffset;
@@ -36,14 +36,14 @@ public class ObjectVision : MonoBehaviour {
 
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
 
-			if(hitInfo.collider.gameObject.tag == barrierTagName)
+			if(isInTags(hitInfo.collider.gameObject.tag))
 				return true;
 		}
 
 		ray = new Ray(transform.position + barrierCheckOffset ,fwd);
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
 			
-			if(hitInfo.collider.gameObject.tag == barrierTagName)
+			if(isInTags(hitInfo.collider.gameObject.tag))
 				return true;
 		}
 
@@ -63,5 +63,13 @@ public class ObjectVision : MonoBehaviour {
 		}
 		
 		return true;
+	}
+	bool isInTags(string tagName){
+	
+		foreach (string tag in barrierTagName) {
+			if(tag == tagName) return true;
+		}
+
+		return false;
 	}
 }

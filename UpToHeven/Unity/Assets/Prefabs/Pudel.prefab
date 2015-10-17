@@ -180,9 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d640f72fb3c74904392fecd5e4e201cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierTagName: StaticObscale
+  barrierTagName:
+  - DynamicObscale
+  - StaticObscale
+  - Iron
   visionDistance: 1
-  barrierCheckOffset: {x: 0, y: 0, z: 0}
+  barrierCheckOffset: {x: 0, y: .5, z: 0}
   edgeCheckOffset: {x: 0, y: .600000024, z: 0}
 --- !u!114 &11499086
 MonoBehaviour:
@@ -207,6 +210,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: barrierTagName.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: edgeTagName
       value: StepPart
@@ -282,6 +289,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: barrierCheckOffset.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: barrierTagName.Array.data[0]
+      value: DynamicObscale
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: barrierTagName.Array.data[2]
+      value: Iron
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

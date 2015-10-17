@@ -7,9 +7,9 @@ public class ChangeObjects : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		foreach (GameObject obj in GameObject.FindGameObjectsWithTag ("StaticObscale")) {
-		
-			if( hasChild(obj.transform, "futur_step")){
+		foreach (GameObject obj in GameObject.FindGameObjectsWithTag ("StepPart")) {
+			
+			/*if( hasChild(obj.transform, "futur_step")){
 				GameObject gameObject = (GameObject) Instantiate (newStep,obj.transform.position,obj.transform.rotation);
 				gameObject.name = obj.name;
 				gameObject.transform.parent = obj.transform.parent;
@@ -18,6 +18,13 @@ public class ChangeObjects : MonoBehaviour {
 				//collider.center = new Vector3(0,-0.5f,0);
 				//collider.size = new Vector3(1,1,1);
 				Destroy(obj);
+			}*/
+			foreach(Transform child in obj.transform){
+				
+				if(child.gameObject.name == "StaticObscaleIron"){
+					child.gameObject.tag = "Iron";
+				}
+				
 			}
 		}
 

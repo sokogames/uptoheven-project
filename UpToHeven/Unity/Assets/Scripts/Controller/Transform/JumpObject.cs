@@ -47,7 +47,9 @@ public class JumpObject : MonoBehaviour {
 
 		if (objectVision.hasBarrier ())
 			return;
-		
+		if (objectVision.isOnEdge())
+			return;
+
 		if (GetComponent<Rigidbody>().velocity.magnitude > 0.02f) return;
 		
 		float jumpX = 0, jumpZ = 0;
