@@ -50,6 +50,6 @@ public class GameController : Controller {
 	}
 	public void GameOver(){
 		Debug.Log ("game over");
-		Application.LoadLevelAsync(0);
+		Application.LoadLevel(0);
 	}
 }
