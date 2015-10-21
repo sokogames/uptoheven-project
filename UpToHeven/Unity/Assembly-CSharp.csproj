@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scenes\ChangeObjects.cs" />
+     <Compile Include="Assets\Scripts\Camera\AdjustAfterOrientation.cs" />
      <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\Action.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\ActionManager.cs" />
