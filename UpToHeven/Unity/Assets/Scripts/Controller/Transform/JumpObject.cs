@@ -9,13 +9,18 @@ public class JumpObject : MonoBehaviour {
 	public float jumpDistanceUp = 1.5f;
 	public float jumpDistanceDown = 1.2f;
 
-	private static float MIN_CHECK_VALUE = 0.1f; 
+	private static float MIN_CHECK_VALUE = 1.0f; 
 	
 	private bool done;
 
 	private ObjectVision objectVision;
+	private RotateObject rotateObject;
 
 	void Start () {
+		rotateObject = GetComponent<RotateObject> ();
+		if (!rotateObject) {
+			Debug.LogError("rotate object not assigned");
+		}
 		objectVision = null;
 	}
 	
@@ -54,7 +59,7 @@ public class JumpObject : MonoBehaviour {
 		
 		float jumpX = 0, jumpZ = 0;
 		
-		switch (JumpObject.GetTransformDirection(transform)) {
+		switch (JumpObject.GetTransformDirection(rotateObject.toRotation)) {
 			case Direction.Left: jumpX = -jumpDistanceOnSide; jumpZ = 0; 
 			break;
 			case Direction.Right: jumpX = jumpDistanceOnSide; jumpZ = 0; 
@@ -66,7 +71,7 @@ public class JumpObject : MonoBehaviour {
 			default: Debug.Log (Direction.Undefined.ToString() + " is not right direction");
 			break;
 		}
-		
+
 		GetComponent<Rigidbody>().velocity = new Vector3(jumpX,jumpHeight,jumpZ);
 		done = false;
 
@@ -75,9 +80,9 @@ public class JumpObject : MonoBehaviour {
 	public bool Done(){
 		return done;
 	}
-	public static Direction GetTransformDirection(Transform tran, float angleRange = 5.0f){
+	public static Direction GetTransformDirection(Quaternion rotation, float angleRange = 10.0f){
 	
-		float angle = tran.rotation.eulerAngles.y;
+		float angle = rotation.eulerAngles.y;
 
 		if(angle > - angleRange && angle < angleRange){
 			return Direction.Forward;

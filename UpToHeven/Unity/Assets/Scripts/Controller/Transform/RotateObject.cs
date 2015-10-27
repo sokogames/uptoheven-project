@@ -5,10 +5,10 @@ public class RotateObject : MonoBehaviour {
 	
 	public float speed  = 20;
 
-	private static float MIN_CHECK_VALUE = 0.5f; 
+	private static float MIN_CHECK_VALUE = 5.0f; 
 
 	private Quaternion _toRotation;
-	private Quaternion toRotation{
+	public Quaternion toRotation{
 		get{
 			return _toRotation;
 		}

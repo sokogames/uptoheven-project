@@ -4,7 +4,9 @@ using System.Collections;
 public class InputController : MonoBehaviour {
 
 	public InputHandler inputHandler;
-	public ActionManager actions;
+	public GameObject actor;
+	public ActionManager jumpActions;
+	public ActionManager rotationActions;
 
 	// Use this for initialization
 	void Start () {
@@ -18,23 +20,23 @@ public class InputController : MonoBehaviour {
 			
 			switch (command) {
 			case InputCommand.Tap:
-				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
-				actions.AddAction(new JumpAction(actions.gameObject));
+				rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+				jumpActions.AddAction(new JumpAction(actor));
 				break;
 			case InputCommand.Left: 
-				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_LEFT));
+				rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_LEFT));
 				break;
 			case InputCommand.Right: 
-				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_RIGHT));
+				rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_RIGHT));
 				break;
 			case InputCommand.Up: 
-				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+				rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 				break;
 			case InputCommand.Down: 
-				actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_BACKWARD));
+				rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_BACKWARD));
 				break;
 			case InputCommand.Realese:
-				actions.AddAction(new JumpAction(actions.gameObject));
+				jumpActions.AddAction(new JumpAction(actor));
 				//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
 				break;
 			default:
