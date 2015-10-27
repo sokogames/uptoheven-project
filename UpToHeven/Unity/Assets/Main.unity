@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -1160,6 +1158,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144575893}
   m_Mesh: {fileID: 4300000, guid: 9d5e517f4c5e8d24581b8198d514ea38, type: 3}
+--- !u!1 &156650559 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 9525f1d68fc2e714599c0cfd919e08d2, type: 3}
+  m_PrefabInternal: {fileID: 1803935606}
 --- !u!1 &159061645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,6 +2032,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -7108,6 +7116,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -8069,7 +8078,7 @@ MonoBehaviour:
   m_Script: {fileID: 178811533}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8087,7 +8096,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11124,11 +11133,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11441162, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: edgeCheckOffset.y
-      value: .600000024
+      value: .550000012
       objectReference: {fileID: 0}
     - target: {fileID: 11441162, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: barrierTagName.Array.data[1]
       value: StaticObscale
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407882, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441162, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+      propertyPath: visionDistance
+      value: 1.29999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423244, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 156650559}
+    - target: {fileID: 6570436, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11416154, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
@@ -12630,9 +12655,10 @@ GameObject:
   - 114: {fileID: 1788795207}
   - 114: {fileID: 1788795206}
   - 114: {fileID: 1788795205}
-  - 114: {fileID: 1788795208}
   - 114: {fileID: 1788795210}
   - 114: {fileID: 1788795209}
+  - 114: {fileID: 1788795211}
+  - 114: {fileID: 1788795208}
   m_Layer: 0
   m_Name: _main
   m_TagString: Untagged
@@ -12715,9 +12741,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1788795203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb5fb3b2f354884e80ddcc74e41b992, type: 3}
+  m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxAcionsInQueue: 5
 --- !u!114 &1788795209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12742,7 +12769,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 1788795209}
-  actions: {fileID: 1919032392}
+  actor: {fileID: 1919032384}
+  rotationActions: {fileID: 1788795211}
+  jumpActions: {fileID: 1788795208}
+--- !u!114 &1788795211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788795203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxAcionsInQueue: 5
 --- !u!1 &1793544939
 GameObject:
   m_ObjectHideFlags: 0
@@ -13684,10 +13725,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb4c246d47354b4c8b04185a29dd92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 3
-  jumpDistanceOnSide: 1.5
-  jumpDistanceUp: 1.89999998
-  jumpDistanceDown: 1.5
+  jumpHeight: 2.5
+  jumpDistanceOnSide: 1.79999995
+  jumpDistanceUp: 2.29999995
+  jumpDistanceDown: 1.29999995
 --- !u!114 &1919032389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13704,18 +13745,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 406638, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
   m_PrefabInternal: {fileID: 1550694197}
---- !u!114 &1919032392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1919032384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxAcionsInQueue: 3
 --- !u!1 &1920305717
 GameObject:
   m_ObjectHideFlags: 0
@@ -14254,7 +14283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextChunk: {fileID: 0}
   fallOnStart: 1
-  fallDelta: .119999997
+  fallDelta: .129999995
   stepPrefix: step
   stepPartPrefix: stepPart
 --- !u!1 &1980300739

@@ -29,6 +29,9 @@ public class InputHandler : MonoBehaviour {
 
 	private InputCommand MobileCommand(){
 
+		if (Input.touchCount == 0)
+			return InputCommand.None;
+
 		Touch touch = Input.GetTouch (0);
 
 		if (touch.phase == TouchPhase.Ended) {

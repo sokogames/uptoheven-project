@@ -5,8 +5,8 @@ public class InputController : MonoBehaviour {
 
 	public InputHandler inputHandler;
 	public GameObject actor;
-	public ActionManager jumpActions;
 	public ActionManager rotationActions;
+	public ActionManager jumpActions;
 
 	// Use this for initialization
 	void Start () {
