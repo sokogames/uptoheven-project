@@ -5,7 +5,7 @@ public class RotateObject : MonoBehaviour {
 	
 	public float speed  = 20;
 
-	private static float MIN_CHECK_VALUE = 5.0f; 
+	private static float MIN_CHECK_VALUE = 10.0f; 
 
 	private Quaternion _toRotation;
 	public Quaternion toRotation{

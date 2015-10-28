@@ -119,7 +119,7 @@ public class Rotate : MonoBehaviour{
 		if (isDone)
 			return;
 
-		if (Quaternion.Angle (transform.rotation, toRotation) < 1) {
+		if (Quaternion.Angle (transform.rotation, toRotation) < 1.0) {
 			facedDirection = calcFacedDirection ();
 			Done ();
 		}
