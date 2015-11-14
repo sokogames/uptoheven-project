@@ -29,6 +29,9 @@ public class InputHandler : MonoBehaviour {
 
 	private InputCommand MobileCommand(){
 
+		if (Input.touchCount == 0)
+			return InputCommand.None;
+
 		Touch touch = Input.GetTouch (0);
 
 		if (touch.phase == TouchPhase.Ended) {
@@ -39,6 +42,7 @@ public class InputHandler : MonoBehaviour {
 				return InputCommand.Tap;
 			}
 
+			Debug.Log ("ended");
 			return InputCommand.Realese;	
 		}
 		
@@ -47,7 +51,7 @@ public class InputHandler : MonoBehaviour {
 
 			Vector2 delta = touch.deltaPosition;
 
-			if(Mathf.Abs (delta.x) > Mathf.Abs (delta.y)){
+			if(Mathf.Abs (delta.x) > Mathf.Abs (delta.y) * 0.5f){
 
 				if(delta.x < 0){
 					return InputCommand.Left;
@@ -68,6 +72,12 @@ public class InputHandler : MonoBehaviour {
 				}
 			}
 		}
+
+		if (touch.phase == TouchPhase.Canceled) {
+			Debug.Log("cancel");
+			return InputCommand.Realese;
+		}
+
 		return InputCommand.None;
 	}
 	private InputCommand DesktopCommand(){
