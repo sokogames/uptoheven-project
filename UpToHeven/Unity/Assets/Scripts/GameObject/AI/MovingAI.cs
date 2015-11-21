@@ -13,11 +13,13 @@ public class MovingAI : MonoBehaviour {
 
 	private float currentActionTime;
 	private int stepCounter;
+	private PlaySoundOnDistance playSoundOnDistance;
 	// Use this for initialization
 	void Start () {
 		currentActionTime = Random.Range (0.0f, (float)actionTime * 2);
 		stepCounter = 0;
 		StartCoroutine("DoAction");
+		playSoundOnDistance = GetComponent<PlaySoundOnDistance> ();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +38,10 @@ public class MovingAI : MonoBehaviour {
 
 			if(stepsToRest > 0){
 				stepCounter = ++stepCounter % (stepsToRest + 1);
+			}
+
+			if(playSoundOnDistance){
+				playSoundOnDistance.Play();
 			}
 		}
 	

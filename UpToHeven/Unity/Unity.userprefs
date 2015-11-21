@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameObject/Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\Sound\PlaySoundOnDistance.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameObject/Player.cs" Line="44" Column="1" />
-      <File FileName="Assets/Scripts/Controller/Transform/RotateObject.cs" Line="25" Column="2" />
-      <File FileName="Assets/Scripts/Camera/FollowPlayer.cs" Line="20" Column="52" />
-      <File FileName="Assets/Scripts/Controller/GameController.cs" Line="46" Column="26" />
-      <File FileName="Assets/Scripts/Controller/Transform/JumpObject.cs" Line="51" Column="3" />
+      <File FileName="Assets\Scripts\Controller\GameController.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\Controller\Sound\PlaySoundOnDistance.cs" Line="33" Column="31" />
+      <File FileName="Assets\Scripts\GameObject\AI\MovingAI.cs" Line="44" Column="31" />
+      <File FileName="Assets\Scenes\ChangeObjects.cs" Line="43" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -13,6 +13,6 @@ public class Strategy : MonoBehaviour {
 	
 	}
 	public virtual void Action(){
-		
+
 	}
 }

@@ -260,6 +260,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newStep: {fileID: 137148, guid: e40e309d389f38a469514f98e288ec8b, type: 2}
+  objectContainer: {fileID: 0}
+  dog: {fileID: 188336, guid: 510aaacd1efdb44959cdb12655565e87, type: 2}
+  pudel: {fileID: 188336, guid: cedc122ea9da94e4493abe7e38d778d3, type: 2}
+  cat: {fileID: 188336, guid: 4fea8db18475e4c658645ca0e9c19079, type: 2}
+  grandMom: {fileID: 188336, guid: fcedccdee1b213a46a310aec5ec197e2, type: 2}
+  person: {fileID: 188336, guid: db8e37065c00a4c4799e3aff21e2493d, type: 2}
 --- !u!4 &2045135030
 Transform:
   m_ObjectHideFlags: 0
