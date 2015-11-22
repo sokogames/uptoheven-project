@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9525f1d68fc2e714599c0cfd919e08d2
-timeCreated: 1445164736
+guid: 33b59aa460d46c948b4105dd3806d1b6
+timeCreated: 1448179000
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pizza_men_19
+    4300000: Box_27
     9500000: //RootNode
   materials:
     importMaterials: 1

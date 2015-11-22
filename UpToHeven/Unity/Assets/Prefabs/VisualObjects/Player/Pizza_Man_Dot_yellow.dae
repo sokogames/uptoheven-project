@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Minddesk Qubicle 2</authoring_tool>
+      <comments>Get Qubicle at www.minddesk.com</comments>
+    </contributor>
+    <created>2015-11-222:25 PM14:25:41:515</created>
+    <modified>2015-11-222:25 PM14:25:41:515</modified>
+    <unit meter="0.01" />
+  </asset>
+  <library_images>
+    <image id="Pizza_Man_Dot_yellow-image" name="Pizza_Man_Dot_yellow-image">
+      <init_from>file:///Materials/Pizza_Man_Dot_yellow.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Pizza_Man_Dot_yellow-material" name="Pizza_Man_Dot_yellow-material">
+      <instance_effect url="#Pizza_Man_Dot_yellow-shader-fx" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Pizza_Man_Dot_yellow-shader-fx" name="Pizza_Man_Dot_yellow-shader-fx">
+      <profile_COMMON>
+        <newparam sid="Pizza_Man_Dot_yellow-image-surface">
+          <surface type="2D">
+            <init_from>Pizza_Man_Dot_yellow-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Pizza_Man_Dot_yellow-image-sampler">
+          <sampler2D>
+            <source>Pizza_Man_Dot_yellow-image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NEAREST</minfilter>
+            <magfilter>NEAREST</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <lambert>
+            <ambient>
+              <color sid="ambient">0.0 0.0 0.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="CHANNEL0" texture="Pizza_Man_Dot_yellow-image-sampler" />
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry name="Box_30" id="Box_30-lib">
+      <mesh>
+        <source id="Box_30-position">
+          <float_array id="Box_30-position-array" count="24">-5.5 1.0 5.5 -5.5 0.0 5.5 -6.5 0.0 5.5 -6.5 1.0 5.5 -6.5 1.0 6.5 -6.5 0.0 6.5 -5.5 0.0 6.5 -5.5 1.0 6.5 </float_array>
+          <technique_common>
+            <accessor source="Box_30-position-array" stride="3" count="8">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_30-normal">
+          <float_array id="Box_30-normal-array" count="18">0.0 0.0 1.0 0.0 0.0 -1.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0</float_array>
+          <technique_common>
+            <accessor source="Box_30-normal-array" stride="3" count="6">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box_30-uv">
+          <float_array id="Box_30-uv-array" count="48">0.0625 0.25 0.0625 0.125 0.125 0.125 0.125 0.25 0.25 0.25 0.25 0.125 0.3125 0.125 0.3125 0.25 0.4375 0.25 0.4375 0.125 0.5 0.125 0.5 0.25 0.625 0.25 0.625 0.125 0.6875 0.125 0.6875 0.25 0.8125 0.25 0.8125 0.125 0.875 0.125 0.875 0.25 0.0625 0.625 0.0625 0.5 0.125 0.5 0.125 0.625 </float_array>
+          <technique_common>
+            <accessor source="Box_30-uv-array" stride="2" count="24">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box_30-vertex">
+          <input semantic="POSITION" source="#Box_30-position" />
+        </vertices>
+        <polylist material="Pizza_Man_Dot_yellow-material" count="6">
+          <input offset="0" semantic="VERTEX" source="#Box_30-vertex" />
+          <input offset="1" semantic="NORMAL" source="#Box_30-normal" />
+          <input offset="2" semantic="TEXCOORD" source="#Box_30-uv" />
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 1 8 1 1 9 2 1 10 3 1 11 4 0 4 5 0 5 6 0 6 7 0 7 3 2 0 2 2 1 5 2 2 4 2 3 7 3 20 6 3 21 1 3 22 0 3 23 3 4 16 4 4 17 7 4 18 0 4 19 5 5 12 2 5 13 1 5 14 6 5 15 </p>
+        </polylist>
+      </mesh>
+    </geometry>)
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Pizza_Man_Dot_yellow-scene" name="Pizza_Man_Dot_yellow-scene">
+      <node sid="Box_30" id="Box_30" name="Box_30">
+        <translate sid="translate">21.50 0.00 80.50</translate>
+        <instance_geometry url="#Box_30-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Pizza_Man_Dot_yellow-material" target="#Pizza_Man_Dot_yellow-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene name="" sid="" url="#Pizza_Man_Dot_yellow-scene" />
+  </scene>
+</COLLADA>

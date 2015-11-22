@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GamePanel : MonoBehaviour {
 
 	public Player player;
+	public int scoreGap;
 	private Text text;
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,6 @@ public class GamePanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = player.currentStepPostion.ToString();
+		text.text = Mathf.Max (1,(player.currentStepPostion - scoreGap)).ToString();
 	}
 }

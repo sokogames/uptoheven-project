@@ -1,12 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\Sound\PlaySoundOnDistance.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\ChangeObjects.cs">
     <Files>
-      <File FileName="Assets\Scripts\Controller\GameController.cs" Line="27" Column="3" />
-      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="44" Column="1" />
-      <File FileName="Assets\Scripts\Controller\Sound\PlaySoundOnDistance.cs" Line="33" Column="31" />
-      <File FileName="Assets\Scripts\GameObject\AI\MovingAI.cs" Line="44" Column="31" />
-      <File FileName="Assets\Scenes\ChangeObjects.cs" Line="43" Column="3" />
+      <File FileName="Assets\Scripts\Controller\GameController.cs" Line="64" Column="25" />
+      <File FileName="Assets\Scripts\GameObject\Stairway\Chunk.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\Stairway\Stairway.cs" Line="59" Column="45" />
+      <File FileName="Assets\Scripts\Controller\Input\InputController.cs" Line="35" Column="4" />
+      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="48" Column="22" />
+      <File FileName="Assets\Scripts\UI\GamePanel.cs" Line="17" Column="67" />
+      <File FileName="Assets\Scenes\ChangeObjects.cs" Line="42" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

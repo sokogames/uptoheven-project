@@ -54,4 +54,9 @@ public class Stairway : MonoBehaviour {
 
 		return chunk;
 	}
+
+	public void StartFall(){
+		firstChunk.GetComponent<Chunk> ().Fall ();
+	}
+
 }

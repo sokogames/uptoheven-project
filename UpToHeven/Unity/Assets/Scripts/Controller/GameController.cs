@@ -3,6 +3,11 @@ using System.Collections;
 
 public class GameController : Controller {
 
+	public const string GAME_STATE_MENU = "game menu"; 
+	public const string GAME_STATE_PLAY = "game play";
+
+	public static string GameState;
+
 	public Player player;
 	public Stairway stairway;
 	public ObscaleController obscaleController;
@@ -24,10 +29,10 @@ public class GameController : Controller {
 		GameObject.DestroyImmediate(player.transform.Find ("body").gameObject);
 		playerBody.name = "body";
 		playerBody.transform.parent = player.transform;
-		playerBody.transform.localPosition = new Vector3 (0, 0.5f, 0);
+		playerBody.transform.localPosition = new Vector3 (0, 0, 0);
 
 		//init stairway
-
+		GameController.GameState = GameController.GAME_STATE_MENU;
 	}
 	// Use this for initialization
 	void Start () {
@@ -51,5 +56,13 @@ public class GameController : Controller {
 	public void GameOver(){
 		Debug.Log ("game over");
 		Application.LoadLevel(0);
+	}
+	public void StartGame(){
+
+		GameController.GameState = GameController.GAME_STATE_PLAY;
+		GameObject.Find ("StartButton").SetActive (false);
+		stairway.StartFall ();
+
+		Debug.Log ("click");
 	}
 }

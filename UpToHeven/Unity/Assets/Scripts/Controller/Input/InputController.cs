@@ -18,14 +18,22 @@ public class InputController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Update is called once per frame
-		
+
 		if (previousTap) {
 			jumpActions.AddAction(new JumpAction(actor));
 			previousTap = false;
 		}	
 
 		InputCommand command = inputHandler.InputHandle();
-			
+
+		if (command != InputCommand.None) {
+			if (GameController.GameState != GameController.GAME_STATE_PLAY) {
+				
+				GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
+				return;
+			}
+		}
+
 		switch (command) {
 		case InputCommand.Tap:
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
