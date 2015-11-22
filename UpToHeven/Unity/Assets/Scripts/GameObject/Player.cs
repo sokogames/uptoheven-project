@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
 		GetComponent<Rigidbody>().isKinematic = true;
 	}
 	void Dead(){
-		Destroy (transform.FindChild("body").gameObject, 0.01f);
+		Destroy (transform.FindChild("body").gameObject, 0.1f);
 		transform.FindChild ("particle").gameObject.SetActive (true);
 	}
 }
