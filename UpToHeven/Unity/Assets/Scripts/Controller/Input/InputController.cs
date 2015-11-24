@@ -30,7 +30,6 @@ public class InputController : MonoBehaviour {
 			if (GameController.GameState != GameController.GAME_STATE_PLAY) {
 				
 				GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
-				return;
 			}
 		}
 

@@ -85,7 +85,7 @@ public class JumpObject : MonoBehaviour {
 
 		return;
 	}
-	public bool Done(){
+	public bool Done(){	
 		return done;
 	}
 	public static Direction GetTransformDirection(Quaternion rotation, float angleRange = 10.0f){
