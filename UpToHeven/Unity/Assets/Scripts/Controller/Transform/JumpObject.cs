@@ -15,8 +15,11 @@ public class JumpObject : MonoBehaviour {
 
 	private ObjectVision objectVision;
 	private RotateObject rotateObject;
+	private AudioSource audioSource;
 
 	void Start () {
+		audioSource = GetComponent<AudioSource> ();
+
 		rotateObject = GetComponent<RotateObject> ();
 		if (!rotateObject) {
 			Debug.LogError("rotate object not assigned");
@@ -74,6 +77,11 @@ public class JumpObject : MonoBehaviour {
 
 		GetComponent<Rigidbody>().velocity = new Vector3(jumpX,jumpHeight,jumpZ);
 		done = false;
+
+		if (!audioSource.isPlaying) {
+			audioSource.pitch = Random.Range(0.6f,1.4f);
+			audioSource.Play();
+		}
 
 		return;
 	}

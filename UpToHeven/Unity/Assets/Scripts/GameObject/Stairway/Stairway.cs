@@ -57,6 +57,8 @@ public class Stairway : MonoBehaviour {
 
 	public void StartFall(){
 		firstChunk.GetComponent<Chunk> ().Fall ();
+		AudioSource audioSource = GetComponent<AudioSource> ();
+		audioSource.Play ();
 	}
 
 }

@@ -14,11 +14,13 @@ public class Player : MonoBehaviour {
 	private Animator anim;
 	private bool landed = true;
 	private Rigidbody rigidBody;
-	
+	private AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		rigidBody = GetComponent<Rigidbody> ();
+		audioSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
