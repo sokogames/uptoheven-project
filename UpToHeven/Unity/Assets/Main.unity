@@ -11930,7 +11930,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: .95588237, g: .95588237, b: .906682551, a: .802999973}
-  m_Intensity: 1.70000005
+  m_Intensity: .699999988
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -14905,6 +14905,7 @@ MonoBehaviour:
   playerRedyForJumpTime: .200000003
   gameOverDelta: 5
   actions: {fileID: 0}
+  light: {fileID: 1507962911}
 --- !u!114 &1788795206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18305,7 +18306,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3824ada2cf90f044cb63ddd8b5dcc92b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98f2303dcfa33ab46a07c415f25a6323, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
