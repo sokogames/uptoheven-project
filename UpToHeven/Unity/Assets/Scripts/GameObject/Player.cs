@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
 	private Rigidbody rigidBody;
 	private AudioSource audioSource;
 
+	public AudioClip explosionClip;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -65,6 +66,13 @@ public class Player : MonoBehaviour {
 		GetComponent<Rigidbody>().isKinematic = true;
 	}
 	void Dead(){
+
+		if (audioSource.isPlaying) {
+			audioSource.Stop();
+		}
+		audioSource.clip = explosionClip;
+		audioSource.Play ();
+
 		Destroy (transform.FindChild("body").gameObject, 0.1f);
 		transform.FindChild ("particle").gameObject.SetActive (true);
 	}

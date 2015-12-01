@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObject\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="17" Column="34" />
+      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="20" Column="32" />
       <File FileName="Assets\Scripts\GameObject\Stairway\Stairway.cs" Line="61" Column="23" />
-      <File FileName="Assets\Scripts\Controller\Input\InputController.cs" Line="32" Column="76" />
-      <File FileName="Assets\Scripts\Controller\GameController.cs" Line="66" Column="26" />
+      <File FileName="Assets\Scripts\Controller\Transform\JumpObject.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

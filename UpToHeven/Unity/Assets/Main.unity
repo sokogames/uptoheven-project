@@ -12572,6 +12572,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11423244, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+      propertyPath: explosionClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b5e7fda0b94900c4ab49fb6534397169, type: 3}
     m_RemovedComponents:
     - {fileID: 11416154, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
