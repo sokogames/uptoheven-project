@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum InputCommand{Left,Right,Up,Down,Realese,None, Tap, TouchBegin};
+public enum InputCommand{Left,Right,Up,Down,Realese,None, Tap, TouchBegin, Canceled};
 
 public class InputHandler : MonoBehaviour {
 
@@ -78,8 +78,7 @@ public class InputHandler : MonoBehaviour {
 		}
 
 		if (touch.phase == TouchPhase.Canceled) {
-			Debug.Log("cancel");
-			return InputCommand.Realese;
+			return InputCommand.Canceled;
 		}
 
 		return InputCommand.None;

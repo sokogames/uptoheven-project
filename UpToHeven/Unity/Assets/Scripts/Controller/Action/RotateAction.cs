@@ -17,6 +17,7 @@ public class RotateAction : Action {
 		rotateObject = receiver.GetComponent<RotateObject> ();
 
 		if (rotateObject == null) {
+			Debug.Log ("object name is " + receiver.name);
 			Debug.LogError("RotateObject  scritp not assigned");
 		}
 	}

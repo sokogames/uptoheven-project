@@ -14870,7 +14870,6 @@ GameObject:
   - 114: {fileID: 1788795210}
   - 114: {fileID: 1788795209}
   - 114: {fileID: 1788795211}
-  - 114: {fileID: 1788795208}
   m_Layer: 0
   m_Name: _main
   m_TagString: Untagged
@@ -14909,7 +14908,7 @@ MonoBehaviour:
   playerJumpTime: .200000003
   playerRedyForJumpTime: .200000003
   gameOverDelta: 5
-  actions: {fileID: 0}
+  actions: {fileID: 1788795211}
   light: {fileID: 1507962911}
 --- !u!114 &1788795206
 MonoBehaviour:
@@ -14946,18 +14945,6 @@ MonoBehaviour:
   globalData: {fileID: 1788795206}
   controllers:
   - {fileID: 1788795205}
---- !u!114 &1788795208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1788795203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxAcionsInQueue: 5
 --- !u!114 &1788795209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14969,7 +14956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8b4000671bcb844a2ae4ee4b49d120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchSension: 5
+  touchSension: 10
 --- !u!114 &1788795210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14983,8 +14970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 1788795209}
   actor: {fileID: 1919032384}
-  rotationActions: {fileID: 1788795211}
-  jumpActions: {fileID: 1788795208}
+  actions: {fileID: 1788795211}
 --- !u!114 &1788795211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14996,7 +14982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAcionsInQueue: 5
+  MaxAcionsInQueue: 3
 --- !u!1 &1789634062
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,10 @@ public class InputController : MonoBehaviour {
 
 	public InputHandler inputHandler;
 	public GameObject actor;
-	public ActionManager rotationActions;
-	public ActionManager jumpActions;
+
+	public ActionManager actions;
+	//public ActionManager rotationActions;
+	//public ActionManager jumpActions;
 
 	private bool previousTap;
 
@@ -21,7 +23,8 @@ public class InputController : MonoBehaviour {
 
 		if (previousTap) {
 			actor.GetComponent<Player>().OnRelease();
-			jumpActions.AddAction(new JumpAction(actor));
+			actions.AddAction(new JumpAction(actor));
+			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			previousTap = false;
 		}	
 
@@ -37,33 +40,37 @@ public class InputController : MonoBehaviour {
 		switch (command) {
 		case InputCommand.Tap:
 			actor.GetComponent<Player>().OnPress();
-			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			previousTap = true;
 			break;
 		case InputCommand.Left:
 			actor.GetComponent<Player>().OnPress();
-			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_LEFT));
+			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_LEFT));
 			break;
 		case InputCommand.Right: 
 			actor.GetComponent<Player>().OnPress();
-			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_RIGHT));
+			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_RIGHT));
 			break;
 		case InputCommand.Up: 
 			actor.GetComponent<Player>().OnPress();
-			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		case InputCommand.Down: 
 			actor.GetComponent<Player>().OnPress();
-			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_BACKWARD));
+			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_BACKWARD));
 			break;
 		case InputCommand.Realese:
 			actor.GetComponent<Player>().OnRelease();
-			jumpActions.AddAction(new JumpAction(actor));
-			//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+			actions.AddAction(new JumpAction(actor));
+			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		case InputCommand.TouchBegin:
 			actor.GetComponent<Player>().OnPress();
 			//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+			break;
+		case InputCommand.Canceled:
+			actor.GetComponent<Player>().OnRelease();
+			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		default:
 			break;
