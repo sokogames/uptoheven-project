@@ -20,6 +20,7 @@ public class InputController : MonoBehaviour {
 		// Update is called once per frame
 
 		if (previousTap) {
+			actor.GetComponent<Player>().OnRelease();
 			jumpActions.AddAction(new JumpAction(actor));
 			previousTap = false;
 		}	
