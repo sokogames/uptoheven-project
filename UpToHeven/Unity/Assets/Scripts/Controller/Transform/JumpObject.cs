@@ -47,8 +47,6 @@ public class JumpObject : MonoBehaviour {
 	}
 	public void Jump(){
 
-		GetComponent<SqueezeObject> ().unsqueezeObject ();
-
 		if (objectVision == null) {
 			objectVision = GetComponent<ObjectVision>();
 			if (objectVision == null) {

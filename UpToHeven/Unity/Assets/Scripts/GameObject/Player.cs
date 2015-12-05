@@ -75,4 +75,10 @@ public class Player : MonoBehaviour {
 		Destroy (transform.FindChild("body").gameObject, 0.1f);
 		transform.FindChild ("particle").gameObject.SetActive (true);
 	}
+	public void OnPress(){
+		anim.SetBool ("Squeeze",true);
+	}
+	public void OnRelease(){
+		anim.SetBool ("Squeeze",false);
+	}
 }

@@ -35,23 +35,33 @@ public class InputController : MonoBehaviour {
 
 		switch (command) {
 		case InputCommand.Tap:
+			actor.GetComponent<Player>().OnPress();
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			previousTap = true;
 			break;
-		case InputCommand.Left: 
+		case InputCommand.Left:
+			actor.GetComponent<Player>().OnPress();
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_LEFT));
 			break;
 		case InputCommand.Right: 
+			actor.GetComponent<Player>().OnPress();
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_RIGHT));
 			break;
 		case InputCommand.Up: 
+			actor.GetComponent<Player>().OnPress();
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		case InputCommand.Down: 
+			actor.GetComponent<Player>().OnPress();
 			rotationActions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_BACKWARD));
 			break;
 		case InputCommand.Realese:
+			actor.GetComponent<Player>().OnRelease();
 			jumpActions.AddAction(new JumpAction(actor));
+			//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+			break;
+		case InputCommand.TouchBegin:
+			actor.GetComponent<Player>().OnPress();
 			//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		default:

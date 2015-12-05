@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum InputCommand{Left,Right,Up,Down,Realese,None, Tap};
+public enum InputCommand{Left,Right,Up,Down,Realese,None, Tap, TouchBegin};
 
 public class InputHandler : MonoBehaviour {
 
@@ -44,6 +44,10 @@ public class InputHandler : MonoBehaviour {
 
 			Debug.Log ("ended");
 			return InputCommand.Realese;	
+		}
+
+		if (touch.phase == TouchPhase.Began) {
+			return InputCommand.TouchBegin;
 		}
 		
 		if (touch.phase == TouchPhase.Moved)
