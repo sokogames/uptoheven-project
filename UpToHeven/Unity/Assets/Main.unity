@@ -14982,7 +14982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAcionsInQueue: 3
+  MaxAcionsInQueue: 1
 --- !u!1 &1789634062
 GameObject:
   m_ObjectHideFlags: 0
