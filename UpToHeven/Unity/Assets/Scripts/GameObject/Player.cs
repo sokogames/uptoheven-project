@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 	private Rigidbody rigidBody;
 	private AudioSource audioSource;
 
+	private SqueezeObject squeezeObject;
+
 	public AudioClip explosionClip;
 	// Use this for initialization
 	void Start () {

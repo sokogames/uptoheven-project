@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameObject\Player.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\Transform\JumpObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="20" Column="32" />
-      <File FileName="Assets\Scripts\GameObject\Stairway\Stairway.cs" Line="61" Column="23" />
-      <File FileName="Assets\Scripts\Controller\Transform\JumpObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="40" Column="18" />
+      <File FileName="Assets\Scripts\Controller\Transform\RotateObject.cs" Line="47" Column="54" />
+      <File FileName="Assets\Scripts\Controller\Transform\JumpObject.cs" Line="42" Column="52" />
+      <File FileName="Assets\Scripts\Controller\Input\InputHandler.cs" Line="95" Column="27" />
+      <File FileName="Assets\Scripts\Controller\Input\InputController.cs" Line="42" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

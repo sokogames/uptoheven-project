@@ -16126,23 +16126,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!95 &1919032386
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1919032384}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 250e034f2918aba46a8ecc9775e1035d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1919032388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16174,6 +16157,21 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 406638, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
   m_PrefabInternal: {fileID: 1550694197}
+--- !u!114 &1919032393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919032384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd50ffadf1369a47a4ac915f198f4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromScale: {x: 1, y: 1, z: 1}
+  toScale: {x: 1, y: .800000012, z: 1}
+  squeezeSpeed: 5
+  unsqueezeSpeed: 2
 --- !u!1 &1931190659
 GameObject:
   m_ObjectHideFlags: 0

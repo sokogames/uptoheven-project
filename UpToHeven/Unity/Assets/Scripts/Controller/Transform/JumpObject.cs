@@ -47,7 +47,7 @@ public class JumpObject : MonoBehaviour {
 	}
 	public void Jump(){
 
-		GetComponent<Animator> ().SetBool ("Squeeze",false);
+		GetComponent<SqueezeObject> ().unsqueezeObject ();
 
 		if (objectVision == null) {
 			objectVision = GetComponent<ObjectVision>();
