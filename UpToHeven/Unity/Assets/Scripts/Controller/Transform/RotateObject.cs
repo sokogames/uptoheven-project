@@ -44,24 +44,31 @@ public class RotateObject : MonoBehaviour {
 
 	}
 	public void RotateLeft(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = transform.rotation * Quaternion.Euler (0, 270.0f, 0);
 	}
 	public void RotateRight(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = transform.rotation * Quaternion.Euler (0, 90.0f, 0);
 	}
 	public void Reverse(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = transform.rotation * Quaternion.Euler (0, 180.0f, 0);
 	}
 	public void FaceForward(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = Quaternion.Euler (0, 0.0f, 0);
 	}
 	public void FaceBackward(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = Quaternion.Euler (0, 180.0f, 0);
 	}
 	public void FaceLeft(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = Quaternion.Euler (0, -90.0f, 0);
 	}
 	public void FaceRight(){
+		GetComponent<Animator> ().SetBool ("Squeeze",true);
 		toRotation = Quaternion.Euler (0, 90.0f, 0);
 	}
 	public bool Done(){

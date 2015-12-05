@@ -12578,6 +12578,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: b5e7fda0b94900c4ab49fb6534397169, type: 3}
     m_RemovedComponents:
     - {fileID: 11416154, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
+    - {fileID: 9564826, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1556309372
@@ -16125,6 +16126,23 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &1919032386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919032384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 250e034f2918aba46a8ecc9775e1035d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1919032388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16151,7 +16169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
 --- !u!4 &1919032390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 406638, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}

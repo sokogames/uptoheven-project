@@ -38,7 +38,6 @@ public class Player : MonoBehaviour {
 
 	private void Jump(){
 		landed = false;
-		anim.SetTrigger("readyForJump");
 
 	}
 	private void Landed(){
@@ -50,8 +49,6 @@ public class Player : MonoBehaviour {
 
 		_currentStepPostion = (int)transform.position.z;
 		currentStepPostion = Mathf.Max (_currentStepPostion, currentStepPostion);
-
-		anim.SetTrigger("landed");
 	}
 	void OnCollisionEnter(Collision collision){
 		if (collision.collider.gameObject.tag == "DynamicObscale") {

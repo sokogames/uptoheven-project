@@ -2,6 +2,7 @@
 using System.Collections;
 
 public enum Direction {Left,Right,Forward,Backward,Undefined};
+
 public class JumpObject : MonoBehaviour {
 
 	public float jumpHeight = 4.0f;
@@ -45,6 +46,8 @@ public class JumpObject : MonoBehaviour {
 		}
 	}
 	public void Jump(){
+
+		GetComponent<Animator> ().SetBool ("Squeeze",false);
 
 		if (objectVision == null) {
 			objectVision = GetComponent<ObjectVision>();
