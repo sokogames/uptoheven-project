@@ -14903,7 +14903,7 @@ MonoBehaviour:
   player: {fileID: 1278641770}
   stairway: {fileID: 2129076750}
   obscaleController: {fileID: 0}
-  distanceToNextStep: 15
+  distanceToNextStep: 30
   stepHeight: .200000003
   playerJumpTime: .200000003
   playerRedyForJumpTime: .200000003
@@ -16129,7 +16129,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &1919032388
+--- !u!114 &1919032387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -16137,13 +16137,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1919032384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cb4c246d47354b4c8b04185a29dd92c, type: 3}
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2.5
-  jumpDistanceOnSide: 1.79999995
-  jumpDistanceUp: 2.29999995
-  jumpDistanceDown: 2
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &1919032389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16155,7 +16154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 7
 --- !u!4 &1919032390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 406638, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}

@@ -23,7 +23,7 @@ public class InputController : MonoBehaviour {
 
 		if (previousTap) {
 			actor.GetComponent<Player>().OnRelease();
-			actions.AddAction(new JumpAction(actor));
+			actions.AddAction(new JumpSlerpAction(actor));
 			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			previousTap = false;
 		}	
@@ -61,7 +61,7 @@ public class InputController : MonoBehaviour {
 			break;
 		case InputCommand.Realese:
 			actor.GetComponent<Player>().OnRelease();
-			actions.AddAction(new JumpAction(actor));
+			actions.AddAction(new JumpSlerpAction(actor));
 			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
 			break;
 		case InputCommand.TouchBegin:

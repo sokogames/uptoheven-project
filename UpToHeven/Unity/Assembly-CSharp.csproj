@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Controller\Action\ActionManager.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\ActionMessage.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\JumpAction.cs" />
+     <Compile Include="Assets\Scripts\Controller\Action\JumpSlerpAction.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\Rotate.cs" />
      <Compile Include="Assets\Scripts\Controller\Action\RotateAction.cs" />
      <Compile Include="Assets\Scripts\Controller\Controller.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\Controller\RemoveAfterTime.cs" />
      <Compile Include="Assets\Scripts\Controller\Sound\PlaySoundOnDistance.cs" />
      <Compile Include="Assets\Scripts\Controller\Transform\JumpObject.cs" />
+     <Compile Include="Assets\Scripts\Controller\Transform\JumpSlerpObject.cs" />
      <Compile Include="Assets\Scripts\Controller\Transform\RotateObject.cs" />
      <Compile Include="Assets\Scripts\Controller\Transform\SqueezeObject.cs" />
      <Compile Include="Assets\Scripts\Data\GlobalData.cs" />
