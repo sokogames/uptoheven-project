@@ -613,13 +613,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 408116}
   - 54: {fileID: 5450680}
-  - 114: {fileID: 11486728}
   - 114: {fileID: 11422446}
   - 114: {fileID: 11499102}
   - 65: {fileID: 6504156}
   - 114: {fileID: 11479708}
   - 82: {fileID: 8209204}
   - 114: {fileID: 11478136}
+  - 114: {fileID: 11464120}
+  - 114: {fileID: 11409680}
   m_Layer: 0
   m_Name: Cat
   m_TagString: DynamicObscale
@@ -1368,13 +1369,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 441388}
   - 54: {fileID: 5493592}
-  - 114: {fileID: 11497418}
   - 114: {fileID: 11486472}
   - 114: {fileID: 11485482}
   - 65: {fileID: 6567648}
   - 114: {fileID: 11479204}
   - 82: {fileID: 8255832}
   - 114: {fileID: 11479988}
+  - 114: {fileID: 11427980}
+  - 114: {fileID: 11423278}
   m_Layer: 0
   m_Name: Dog
   m_TagString: DynamicObscale
@@ -3021,7 +3023,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 484740}
   - 54: {fileID: 5414280}
-  - 114: {fileID: 11461276}
   - 114: {fileID: 11497270}
   - 114: {fileID: 11424482}
   - 65: {fileID: 6595548}
@@ -3030,6 +3031,8 @@ GameObject:
   - 114: {fileID: 11412092}
   - 82: {fileID: 8207618}
   - 114: {fileID: 11485542}
+  - 114: {fileID: 11496924}
+  - 114: {fileID: 11497672}
   m_Layer: 0
   m_Name: GrandMom
   m_TagString: DynamicObscale
@@ -4292,7 +4295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.76837158e-07, y: -7.15255737e-07, z: 0}
+  m_LocalPosition: {x: 4.76837158e-07, y: -7.15255737e-07, z: 9.53674316e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464972}
@@ -4531,7 +4534,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114340}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .160000324, y: -1.1920929e-06, z: 0}
+  m_LocalPosition: {x: .160000324, y: -4.76837158e-07, z: 9.53674316e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428338}
@@ -4619,7 +4622,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.15255737e-07, z: 0}
+  m_LocalPosition: {x: 0, y: 7.15255737e-07, z: 9.53674316e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449170}
@@ -5555,7 +5558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.5720825, y: 219.926743, z: -411.891876}
+  m_LocalPosition: {x: -3.18465281, y: 1.30832839, z: 10.6073027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489094}
@@ -5612,7 +5615,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133160}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .160000324, y: -7.15255737e-07, z: 0}
+  m_LocalPosition: {x: .160000324, y: 0, z: 9.53674316e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462992}
@@ -6749,7 +6752,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172816}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .160000324, y: 3.57627869e-07, z: 0}
+  m_LocalPosition: {x: .160000324, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449086}
@@ -13810,6 +13813,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -13879,6 +13883,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -13948,6 +13953,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -15933,6 +15939,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
+--- !u!114 &11409680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &11411416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15983,7 +16003,7 @@ MonoBehaviour:
   scriptsToDisable:
   - {fileID: 11442230}
   - {fileID: 11424482}
-  - {fileID: 11461276}
+  - {fileID: 0}
   - {fileID: 11497270}
   tagName: Player
   afterTime: .5
@@ -16106,7 +16126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 11486728}
   actionTime: 1
   strategy: {fileID: 11479708}
   stepsToRest: 1
@@ -16123,6 +16142,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
+--- !u!114 &11423278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &11423706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16189,6 +16222,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
+--- !u!114 &11427980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!114 &11428536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16390,9 +16435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 11424482}
-  moving: {fileID: 11461276}
-  direction: 0
 --- !u!114 &11444060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16615,22 +16657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
---- !u!114 &11461276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 11424482}
 --- !u!114 &11461464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16715,6 +16741,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
+--- !u!114 &11464120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!114 &11466264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16967,9 +17005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 11485482}
-  moving: {fileID: 11497418}
-  direction: 0
 --- !u!114 &11479708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16981,9 +17016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 11499102}
-  moving: {fileID: 11486728}
-  direction: 0
 --- !u!114 &11479886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17189,7 +17221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 11497418}
   actionTime: 1
   strategy: {fileID: 11479204}
   stepsToRest: 0
@@ -17212,22 +17243,6 @@ MonoBehaviour:
   startLiftTime: 5
   mouseTime: 5
   onlyOnce: 0
---- !u!114 &11486728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 11499102}
 --- !u!114 &11486846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17372,6 +17387,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeTime: .800000012
+--- !u!114 &11496924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!114 &11497270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17383,27 +17410,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 11461276}
   actionTime: 3
   strategy: {fileID: 11442230}
   stepsToRest: 0
   restTiem: 1
---- !u!114 &11497418
+--- !u!114 &11497672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133160}
+  m_GameObject: {fileID: 172816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 11485482}
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &11498408
 MonoBehaviour:
   m_ObjectHideFlags: 1

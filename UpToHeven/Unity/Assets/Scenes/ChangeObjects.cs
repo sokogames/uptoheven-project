@@ -41,10 +41,10 @@ public class ChangeObjects : MonoBehaviour {
 	void Loop(Transform container){
 		switch(container.name){
 		//case "Boy":  ReplaceObjects(container.gameObject, person); break;
-		//case "Cat": ReplaceObjects(container.gameObject, cat); break;
-		//case "Dog": ReplaceObjects(container.gameObject, dog); break;
-		//case "Pudel": ReplaceObjects(container.gameObject, pudel); break;
-		//case "GrandMom": ReplaceObjects(container.gameObject, grandMom); break;
+		case "Cat": AddNewMoving(container.gameObject); break;
+		case "Dog": AddNewMoving(container.gameObject); break;
+		case "Pudel": AddNewMoving(container.gameObject); break;
+		case "GrandMom": AddNewMoving(container.gameObject); break;
 		//case "Boy(Clone)":  container.gameObject.name = "Boy"; break;
 		//case "Cat(Clone)": container.gameObject.name = "Cat"; break;
 		//case "Dog(Clone)": container.gameObject.name = "Dog"; break;
@@ -53,7 +53,7 @@ public class ChangeObjects : MonoBehaviour {
 		//case "Proto_101_unit_ground": container.localScale = new Vector3(1,60,1); container.Translate(new Vector3(0,-3.571429f,0)); break;
 		//case "Mous_cub_001": container.localScale = new Vector3(1,60,1); container.Translate(new Vector3(0,-7.143f,0)); break;
 		//case "futur_step_2": container.localScale = new Vector3(1,60,1); container.Translate(new Vector3(0,-7.143f,0)); break;
-		case "Tree_001": container.localPosition = new Vector3(0,-0.1f,0); break;
+		//case "Tree_001": container.localPosition = new Vector3(0,-0.1f,0); break;
 		default: 
 			foreach(Transform child in container){
 				Loop(child);
@@ -87,5 +87,13 @@ public class ChangeObjects : MonoBehaviour {
 
 		return false;
 	
+	}
+	void AddNewMoving(GameObject obj){
+	
+		Destroy (obj.GetComponent<Moving> ());
+
+		obj.AddComponent<RotateObject> ();
+		obj.AddComponent<JumpSlerpObject> ();
+
 	}
 }

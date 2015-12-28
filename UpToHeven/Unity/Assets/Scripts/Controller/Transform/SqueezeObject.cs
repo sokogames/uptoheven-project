@@ -9,6 +9,8 @@ public class SqueezeObject : MonoBehaviour {
 	public float squeezeSpeed;
 	public float unsqueezeSpeed;
 
+	public float autoUnSqueezTime = 0.1f;
+
 	private bool squeeze;
 	// Use this for initialization
 	void Start () {
@@ -31,10 +33,14 @@ public class SqueezeObject : MonoBehaviour {
 			}
 		}
 	}
-	public void squeezeObject(){
+	public void Squeeze(){
 		squeeze = true;
 	}
-	public void unsqueezeObject(){
+	public void UnSqueeze(){
 		squeeze = false;
+	}
+	public void SqueezeWithAutoUnSqueeze(){
+		Squeeze ();
+		Invoke ("UnSqueeze",autoUnSqueezTime);
 	}
 }

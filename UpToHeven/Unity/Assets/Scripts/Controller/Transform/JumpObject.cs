@@ -54,7 +54,7 @@ public class JumpObject : MonoBehaviour {
 			}
 		}
 
-		if (objectVision.hasBarrier ())
+		if (objectVision.hasBarrier())
 			return;
 		if (objectVision.isOnEdge())
 			return;

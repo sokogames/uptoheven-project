@@ -1,32 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class InputController : MonoBehaviour {
 
+	private JumperDirection finalDirection;
+	private Queue<JumperDirection> jumperQueue;
+	private bool pressed;
 	public InputHandler inputHandler;
-	public GameObject actor;
-
-	public ActionManager actions;
-	//public ActionManager rotationActions;
-	//public ActionManager jumpActions;
-
-	private bool previousTap;
-
+	
+	public Player player;
+	public int queueLenght; 
 	// Use this for initialization
 	void Start () {
-		previousTap = false;
+		player.OnJumperEnded += OnJumperEnded;
+		finalDirection = JumperDirection.forward;
+		jumperQueue = new Queue<JumperDirection> ();
+		pressed = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Update is called once per frame
 
-		if (previousTap) {
-			actor.GetComponent<Player>().OnRelease();
-			actions.AddAction(new JumpSlerpAction(actor));
-			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
-			previousTap = false;
-		}	
 
 		InputCommand command = inputHandler.InputHandle();
 
@@ -34,46 +30,52 @@ public class InputController : MonoBehaviour {
 			if (GameController.GameState != GameController.GAME_STATE_PLAY) {
 				
 				GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
+				player.QuickJump(JumperDirection.forward);
+				return;
 			}
 		}
 
 		switch (command) {
 		case InputCommand.Tap:
-			actor.GetComponent<Player>().OnPress();
-			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
-			previousTap = true;
+			player.QuickJump(JumperDirection.forward);
 			break;
 		case InputCommand.Left:
-			actor.GetComponent<Player>().OnPress();
-			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_LEFT));
+			player.Squat();
+			finalDirection = JumperDirection.left;
+			player.Rotate(finalDirection);
 			break;
 		case InputCommand.Right: 
-			actor.GetComponent<Player>().OnPress();
-			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_RIGHT));
+			player.Squat();
+			finalDirection = JumperDirection.right;
+			player.Rotate(finalDirection);
 			break;
 		case InputCommand.Up: 
-			actor.GetComponent<Player>().OnPress();
-			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+			player.Squat();
+			finalDirection = JumperDirection.forward;
+			player.Rotate(finalDirection);
 			break;
 		case InputCommand.Down: 
-			actor.GetComponent<Player>().OnPress();
-			actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_BACKWARD));
+			player.Squat();
+			finalDirection = JumperDirection.backward;
+			player.Rotate(finalDirection);
 			break;
 		case InputCommand.Realese:
-			actor.GetComponent<Player>().OnRelease();
-			actions.AddAction(new JumpSlerpAction(actor));
-			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+			player.Jump(finalDirection);
 			break;
 		case InputCommand.TouchBegin:
-			actor.GetComponent<Player>().OnPress();
-			//actions.AddAction(new RotateAction(actions.gameObject,RotateAction.ACTION_FACE_FORWARD));
+			player.Squat();
 			break;
 		case InputCommand.Canceled:
-			actor.GetComponent<Player>().OnRelease();
-			//actions.AddAction(new RotateAction(actor,RotateAction.ACTION_FACE_FORWARD));
+			player.UnSquat();
 			break;
 		default:
 			break;
 		}
+		//if(command != InputCommand.None)
+		//Debug.Log (command + " " + finalDirection);
+	}
+
+	void OnJumperEnded(){
+		//Debug.Log ("Done man");	
 	}
 }

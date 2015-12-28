@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -6061,6 +6059,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .934584141, b: .0514705777, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
@@ -7272,6 +7276,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -7365,7 +7370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1278641770}
-  scoreGap: 3
 --- !u!114 &976096296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8183,7 +8187,7 @@ MonoBehaviour:
   m_Script: {fileID: 178811533}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8201,7 +8205,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13060,6 +13064,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: abc3372dacad1d2478800a3d3494e20c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -13699,7 +13709,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1672808627}
   - 54: {fileID: 1672808637}
-  - 114: {fileID: 1672808636}
   - 114: {fileID: 1672808635}
   - 114: {fileID: 1672808634}
   - 65: {fileID: 1672808633}
@@ -13708,6 +13717,8 @@ GameObject:
   - 114: {fileID: 1672808630}
   - 82: {fileID: 1672808629}
   - 114: {fileID: 1672808628}
+  - 114: {fileID: 1672808638}
+  - 114: {fileID: 1672808636}
   m_Layer: 0
   m_Name: GrandMom
   m_TagString: DynamicObscale
@@ -13758,6 +13769,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -13827,7 +13839,7 @@ MonoBehaviour:
   scriptsToDisable:
   - {fileID: 1672808632}
   - {fileID: 1672808634}
-  - {fileID: 1672808636}
+  - {fileID: 0}
   - {fileID: 1672808635}
   tagName: Player
   afterTime: .5
@@ -13861,9 +13873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 1672808634}
-  moving: {fileID: 1672808636}
-  direction: 0
 --- !u!65 &1672808633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13908,7 +13917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 1672808636}
   actionTime: 3
   strategy: {fileID: 1672808632}
   stepsToRest: 0
@@ -13916,20 +13924,17 @@ MonoBehaviour:
 --- !u!114 &1672808636
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11427040, guid: fcedccdee1b213a46a310aec5ec197e2,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672808626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 1672808634}
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!54 &1672808637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13946,6 +13951,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1672808638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672808626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!1 &1698619794 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: cec439c61542a3d4abdae3bfc6ded10c, type: 3}
@@ -14869,7 +14886,6 @@ GameObject:
   - 114: {fileID: 1788795205}
   - 114: {fileID: 1788795210}
   - 114: {fileID: 1788795209}
-  - 114: {fileID: 1788795211}
   m_Layer: 0
   m_Name: _main
   m_TagString: Untagged
@@ -14908,7 +14924,6 @@ MonoBehaviour:
   playerJumpTime: .200000003
   playerRedyForJumpTime: .200000003
   gameOverDelta: 5
-  actions: {fileID: 1788795211}
   light: {fileID: 1507962911}
 --- !u!114 &1788795206
 MonoBehaviour:
@@ -14969,20 +14984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 1788795209}
-  actor: {fileID: 1919032384}
-  actions: {fileID: 1788795211}
---- !u!114 &1788795211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1788795203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ace6f0c2c554c2081fc6d356dbcf97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxAcionsInQueue: 1
+  player: {fileID: 1278641770}
+  queueLenght: 0
 --- !u!1 &1789634062
 GameObject:
   m_ObjectHideFlags: 0
@@ -16058,6 +16061,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -18319,6 +18323,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1

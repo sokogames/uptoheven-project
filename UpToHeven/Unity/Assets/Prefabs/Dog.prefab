@@ -27,13 +27,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 487338}
   - 54: {fileID: 5461614}
-  - 114: {fileID: 11427040}
   - 114: {fileID: 11499086}
   - 114: {fileID: 11441870}
   - 65: {fileID: 6512564}
   - 114: {fileID: 11402258}
   - 82: {fileID: 8278508}
   - 114: {fileID: 11462890}
+  - 114: {fileID: 11464136}
+  - 114: {fileID: 11431738}
   m_Layer: 0
   m_Name: Dog
   m_TagString: DynamicObscale
@@ -139,6 +140,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -221,10 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 11441870}
-  moving: {fileID: 11427040}
-  direction: 0
---- !u!114 &11427040
+--- !u!114 &11431738
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -232,14 +231,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 188336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 11441870}
+  speed: 8
 --- !u!114 &11441870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -271,6 +266,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObjectName: Player
   checkDelta: 1
+--- !u!114 &11464136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &11499086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,7 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 11427040}
   actionTime: 1
   strategy: {fileID: 11402258}
   stepsToRest: 0
@@ -325,7 +333,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moving
       value: 
-      objectReference: {fileID: 11427040}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: objectVision
       value: 
@@ -393,6 +401,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpTime
+      value: .25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -8,7 +8,6 @@ public class ObjectVision : MonoBehaviour {
 	public Vector3 barrierCheckOffset;
 	public Vector3 edgeCheckOffset;
 
-	private Vector3 vDiagonal = new Vector3(0, -1, 1);
 	// Use this for initialization
 	void Start () {
 
@@ -18,42 +17,63 @@ public class ObjectVision : MonoBehaviour {
 	void Update () {
 		#if UNITY_EDITOR
 
-		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-		Debug.DrawRay(transform.position + barrierCheckOffset,fwd);
-		Debug.DrawRay(transform.position,fwd);
-
-		Vector3 diagonal = transform.TransformDirection(vDiagonal);
-		Debug.DrawRay(transform.position + edgeCheckOffset,diagonal);
-
 		#endif
 	}
-	public bool hasBarrier(){
+	public bool hasBarrier(JumperDirection direction){
 	
-		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-		Ray ray = new Ray(transform.position + barrierCheckOffset ,fwd);
+		Ray ray = GetObstacleRay (direction);
 		RaycastHit hitInfo;	
 
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
 
-			if(isInTags(hitInfo.collider.gameObject.tag))
+			if(isInTags(hitInfo.collider.gameObject.tag)){
 				return true;
+			}
 		}
 
-		ray = new Ray(transform.position + barrierCheckOffset ,fwd);
+		ray = new Ray(transform.position + barrierCheckOffset ,ray.direction);
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
 			
-			if(isInTags(hitInfo.collider.gameObject.tag))
+			if(isInTags(hitInfo.collider.gameObject.tag)){
 				return true;
+			}
 		}
 
 		return false;
 	}
-	public bool isOnEdge(){
 
-		Vector3 diagoanl = transform.TransformDirection(vDiagonal);
+	private Vector3 GetVectorFromDirection(JumperDirection direction){
+	
+		Vector3 vector = Vector3.forward;
+
+		switch(direction){
 		
-		Ray ray = new Ray(transform.position + edgeCheckOffset ,diagoanl);
+		case JumperDirection.left: 
+			vector = Vector3.left;
+			break;
+		case JumperDirection.right: 
+			vector = Vector3.right;
+			break;
+		case JumperDirection.forward: 
+			vector = Vector3.forward;
+			break;
+		case JumperDirection.backward: 
+			vector = Vector3.back;
+			break;
+
+		}
+
+		return vector;//transform.TransformDirection(vector);
+	}
+
+	public bool hasBarrier(){
+
+		return hasBarrier (JumperDirection.forward);
+		
+	}
+	public bool isOnEdge(JumperDirection direction = JumperDirection.forward){
+
+		Ray ray = GetOnEndgeRay (direction);
 		RaycastHit hitInfo;	
 		
 		if (Physics.Raycast(ray ,out hitInfo, visionDistance )) {
@@ -61,7 +81,7 @@ public class ObjectVision : MonoBehaviour {
 			if(hitInfo.collider.gameObject != null)
 				return false;
 		}
-		
+
 		return true;
 	}
 	bool isInTags(string tagName){
@@ -71,5 +91,13 @@ public class ObjectVision : MonoBehaviour {
 		}
 
 		return false;
+	}
+	private Ray GetOnEndgeRay(JumperDirection direction){
+		Vector3 diagoanl = GetVectorFromDirection (direction) + Vector3.down;
+		return new Ray(transform.position + edgeCheckOffset ,diagoanl);
+	}
+	private Ray GetObstacleRay(JumperDirection direction){
+		Vector3 dir = GetVectorFromDirection(direction);
+		return new Ray(transform.position + barrierCheckOffset ,dir);
 	}
 }

@@ -19,7 +19,6 @@ public class GameController : Controller {
 
 	public float gameOverDelta = 3.0f;
 
-	public ActionManager actions;
 	public Light light;
 
 	public void init(){

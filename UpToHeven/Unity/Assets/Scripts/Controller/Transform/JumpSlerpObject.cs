@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-public enum SlerpDirection {left,right,forward,backward};
+public delegate void JumpSlerpEnded(JumperDirection direction);
 
 [RequireComponent (typeof (Rigidbody))]
 public class JumpSlerpObject : MonoBehaviour {
 
-	public float distance = 3;
-	public float jumpTime = 1;
+	public event JumpSlerpEnded OnJumpSlerpEnded;
+
+	public float distance = 1;
+	public float jumpTime = 0.25f;
 	public float stepHeight = 0.2f;
 	// Use this for initialization
 	private Rigidbody rigidBody;
 	private Vector3 toPostion;
 	private Vector3 fromPosition;
 	private ObjectVision objectVision;
+	private JumperDirection currentDirection;
 
 	private float startTime;
 	private bool jumping = false;
@@ -34,11 +36,14 @@ public class JumpSlerpObject : MonoBehaviour {
 			transform.position = toPostion;
 			rigidBody.isKinematic = false;
 			jumping = false;	
+			if(OnJumpSlerpEnded != null){
+				OnJumpSlerpEnded(currentDirection);
+			}
 			return;
 		}
 
 		Vector3 center = (transform.position + toPostion) * 0.5F;
-		center -= new Vector3(0, 1, 0);
+		center -= new Vector3(0, 1.2f, 0);
 		Vector3 riseRelCenter = fromPosition - center;
 		Vector3 setRelCenter = toPostion - center;
 		float fracComplete = (Time.time - startTime) / jumpTime;
@@ -47,37 +52,29 @@ public class JumpSlerpObject : MonoBehaviour {
 
 	}
 
-	public void Jump(SlerpDirection playerFacedTo){
+	public void Jump(JumperDirection direction){
 
-		if (jumping)
+		currentDirection = direction;
+
+		if (jumping) {
+			Debug.Log ("still in the air!!!");
 			return;
-
-		if (objectVision == null) {
-			objectVision = GetComponent<ObjectVision>();
-			if (objectVision == null) {
-				Debug.LogError("ObjectVision scritp not assigned");
-			}
 		}
-		
-		if (objectVision.hasBarrier ())
-			return;
-		if (objectVision.isOnEdge())
-			return;
 
 		rigidBody.isKinematic = true;
 		rigidBody.detectCollisions = true;
 
-		switch(playerFacedTo){
-		case SlerpDirection.left:
+		switch(currentDirection){
+		case JumperDirection.left:
 			toPostion = transform.position + new Vector3(-distance,0,0);
 			break;
-		case SlerpDirection.right: 
+		case JumperDirection.right: 
 			toPostion = transform.position + new Vector3(distance,0,0);
 			break;
-		case SlerpDirection.backward: 
+		case JumperDirection.backward: 
 			toPostion = transform.position + new Vector3(0,-stepHeight,-distance);
 			break;
-		case SlerpDirection.forward: 
+		case JumperDirection.forward: 
 			toPostion = transform.position + new Vector3(0,stepHeight,distance);	
 			break;
 		}
@@ -87,26 +84,7 @@ public class JumpSlerpObject : MonoBehaviour {
 		jumping = true;
 
 	}
-	public void Jump(){
-		SlerpDirection direction = SlerpDirection.forward;
-		float angleRange = 5;
-		float angle = transform.rotation.eulerAngles.y;
-		
-		if(angle > - angleRange && angle < angleRange){
-			direction = SlerpDirection.forward;
-		}
-		if(angle > 270 - angleRange && angle < 270 + angleRange){
-			direction = SlerpDirection.left;
-		}
-		if(angle > 180 - angleRange && angle < 180 + angleRange){
-			direction = SlerpDirection.backward;
-		}
-		if(angle > 90 - angleRange && angle < 90 + angleRange){
-			direction = SlerpDirection.right;
-		}
 
-		Jump (direction);
-	}
 	public bool Done(){	
 		return !jumping;
 	}

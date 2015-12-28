@@ -60,7 +60,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 487338}
   - 54: {fileID: 5461614}
-  - 114: {fileID: 11427040}
   - 114: {fileID: 11499086}
   - 114: {fileID: 11441870}
   - 65: {fileID: 6512564}
@@ -69,6 +68,8 @@ GameObject:
   - 114: {fileID: 11438968}
   - 82: {fileID: 8228934}
   - 114: {fileID: 11450870}
+  - 114: {fileID: 11429584}
+  - 114: {fileID: 11451854}
   m_Layer: 0
   m_Name: GrandMom
   m_TagString: DynamicObscale
@@ -231,6 +232,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -347,10 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ddfa60ebb9a046be4b387d8e31e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVision: {fileID: 11441870}
-  moving: {fileID: 11427040}
-  direction: 0
---- !u!114 &11427040
+--- !u!114 &11429584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -358,14 +357,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba0931c5859fe84f85bb76001749c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 515646e9c191d114b86699814e7f819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
-  jumpDistanceOnSide: 2.5
-  jumpDistanceUp: 2
-  jumpDistanceDown: 1.5
-  playerVision: {fileID: 11441870}
+  distance: 1
+  jumpTime: .25
+  stepHeight: .200000003
 --- !u!114 &11438968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +377,7 @@ MonoBehaviour:
   scriptsToDisable:
   - {fileID: 11402258}
   - {fileID: 11441870}
-  - {fileID: 11427040}
+  - {fileID: 0}
   - {fileID: 11499086}
   tagName: Player
   afterTime: .5
@@ -415,6 +412,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObjectName: Player
   checkDelta: 1
+--- !u!114 &11451854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7396bd75c64df6a971959d92474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
 --- !u!114 &11499086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,7 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8932973b95b9b1a4895708aae62598af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingScript: {fileID: 11427040}
   actionTime: 3
   strategy: {fileID: 11402258}
   stepsToRest: 0
@@ -473,7 +481,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moving
       value: 
-      objectReference: {fileID: 11427040}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: objectVision
       value: 
@@ -521,7 +529,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scriptsToDisable.Array.data[2]
       value: 
-      objectReference: {fileID: 11427040}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: scriptsToDisable.Array.data[3]
       value: 

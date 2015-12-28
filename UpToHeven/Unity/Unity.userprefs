@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controller\Transform\JumpSlerpObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller/Transform/JumpSlerpObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\Controller\Input\InputController.cs" Line="64" Column="41" />
-      <File FileName="Assets\Scripts\Controller\Input\InputHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameObject\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Controller\Transform\JumpSlerpObject.cs" Line="41" Column="29" />
-      <File FileName="Assets\Scripts\Controller\Action\JumpAction.cs" Line="34" Column="1" />
-      <File FileName="Assets\Scripts\Controller\Action\JumpSlerpAction.cs" Line="21" Column="22" />
-      <File FileName="Assets\Scripts\Controller\Transform\JumpObject.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/Controller/Input/InputHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameObject/Player.cs" Line="142" Column="30" />
+      <File FileName="Assets/Scripts/Controller/Transform/RotateObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controller/Input/InputController.cs" Line="65" Column="11" />
+      <File FileName="Assets/Scripts/Controller/Transform/JumpSlerpObject.cs" Line="52" Column="3" />
+      <File FileName="Assets/Scenes/ChangeObjects.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameObject/AI/Patrolling.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controller/Transform/SqueezeObject.cs" Line="40" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

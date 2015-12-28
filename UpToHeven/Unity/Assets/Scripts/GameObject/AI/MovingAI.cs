@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class MovingAI : MonoBehaviour {
-
-	public Moving movingScript;
+	
 	public float actionTime;
 	public Stategy strategy;
 

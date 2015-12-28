@@ -6,9 +6,7 @@ public class Fatalit : MonoBehaviour {
 	public MonoBehaviour[] scriptsToDisable; 
 	public string tagName;
 	public float afterTime;
-
-
-	private MovingDirection movingDirection;
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -21,7 +19,6 @@ public class Fatalit : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == tagName) {
-			movingDirection = GetComponent<Moving>().currentDirection;
 			DisableSripts();
 			StopAllCoroutines ();
 			Invoke("DoFatalit",afterTime);
@@ -36,7 +33,7 @@ public class Fatalit : MonoBehaviour {
 	void DoFatalit(){
 		Animator anim = GetComponent<Animator> ();
 		anim.enabled = true;
-		if (movingDirection == MovingDirection.left) {
+		if (Mathf.Abs(transform.rotation.eulerAngles.y - 270.0f) < 10.0f) {
 			anim.SetBool(Animator.StringToHash("isLeft"),true);
 		}
 	}
