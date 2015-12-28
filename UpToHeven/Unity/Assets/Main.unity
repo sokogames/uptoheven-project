@@ -7306,9 +7306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1278641770}
-  lerpSpeed: 1
+  lerpSpeed: 2
   offset: {x: 3, y: 2, z: 0}
-  scale: {x: .200000003, y: 1, z: 1}
+  scale: {x: .300000012, y: 1, z: 1}
 --- !u!114 &970278943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16145,7 +16145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 1
-  jumpTime: .25
+  jumpTime: .349999994
   stepHeight: .200000003
 --- !u!114 &1919032389
 MonoBehaviour:
@@ -18295,6 +18295,9 @@ MonoBehaviour:
   - {fileID: 188914, guid: 06d4d5ce5a94dcf4ca957c7d441f2560, type: 2}
   - {fileID: 124546, guid: 3c87cc9f7e6113747a7b72ccfdfb72fa, type: 2}
   - {fileID: 177098, guid: 8b342270d02f35d489281f30b0ac5013, type: 2}
+  - {fileID: 192292, guid: bc23085f413bd4f48895cb3215cdd7c2, type: 2}
+  - {fileID: 140144, guid: 7958029c0a49f754280fb614bc6e5f99, type: 2}
+  - {fileID: 168342, guid: b419e58b33083ff4ebce509c5a767095, type: 2}
 --- !u!4 &2129076751
 Transform:
   m_ObjectHideFlags: 0

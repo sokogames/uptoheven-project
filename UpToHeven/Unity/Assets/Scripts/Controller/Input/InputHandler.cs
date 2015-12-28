@@ -55,6 +55,8 @@ public class InputHandler : MonoBehaviour {
 
 			Vector2 delta = touch.deltaPosition;
 
+			if(delta.magnitude < touchSension) return InputCommand.None;
+
 			if(Mathf.Abs (delta.x) > Mathf.Abs (delta.y) * 0.5f){
 
 				if(delta.x < 0){

@@ -124,6 +124,9 @@ public class Player : MonoBehaviour, IJumper {
 	}
 
 	public void Squat(){
+		if (!jumpSlerpObject.Done())
+			return;
+			
 		animator.SetBool ("Squeeze",true);
 	}
 
@@ -132,13 +135,15 @@ public class Player : MonoBehaviour, IJumper {
 	}
 
 	public void QuickJump (JumperDirection direction){
-		Squat ();
+		if (!jumpSlerpObject.Done())
+			return;
+	
 		rotateObject.RotateTo (direction);
 		internalJump (direction);
-		Invoke ("UnSquat",quickUnsquatTime);
+		animator.SetBool ("Squeeze",false);
+		animator.SetTrigger ("QuickJump");
 	}
 	public void Rotate(JumperDirection direction){
-
 		if (!jumpSlerpObject.Done())
 			return;
 
