@@ -9,6 +9,9 @@ public class Chunk : MonoBehaviour {
 	public float fallDelta;
 	public string stepPrefix;
 	public string stepPartPrefix;
+
+	private Transform toPosition;
+	private float toPositionDistance;
 	// Use this for initialization
 	void Start () {
 		if (fallOnStart) {
@@ -20,12 +23,19 @@ public class Chunk : MonoBehaviour {
 	void Update () {
 	
 	}
-	public void Fall(){
-		StartCoroutine ("fallChilds");
+	public void Fall(Transform toPosition, float toPositionDistance){
+		this.toPosition = toPosition;
+		this.toPositionDistance = toPositionDistance;
+		Fall ();
 	}
-	IEnumerator  fallChilds(){
+	public void Fall(){
+		StartCoroutine ("FallCycle");
+	}
+	IEnumerator  FallCycle(){
 		Transform step;
 		Transform stepPart;
+		float currentFallDelta;
+
 
 		int stepIndex = 0;
 
@@ -33,17 +43,23 @@ public class Chunk : MonoBehaviour {
 
 			int stepPartIndex = 0;
 
-			yield return new WaitForSeconds (fallDelta);
+			currentFallDelta = (toPosition != null 
+			                    && 
+			                    (toPosition.position.z - step.transform.position.z) > toPositionDistance
+			                    ) 
+								? 0 : fallDelta;
+
+			yield return new WaitForSeconds (currentFallDelta);
 
 			while (stepPart = step.FindChild(stepPartPrefix + stepPartIndex++.ToString())) {
-				yield return new WaitForSeconds (fallDelta);
+				yield return new WaitForSeconds (currentFallDelta);
 
 				stepPart.GetComponent<StepPart> ().Fall ();
 			}
 		}
 
 		if (nextChunk) {
-			nextChunk.Fall ();
+			nextChunk.Fall (toPosition,toPositionDistance);
 		}
 
 		Destroy (gameObject);

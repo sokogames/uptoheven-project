@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StepPart : MonoBehaviour {
 
-	public float removeTime;
+	public static float removeTime = 1f;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +15,7 @@ public class StepPart : MonoBehaviour {
 	}
 	public void Fall(){
 		GetComponent<Rigidbody> ().isKinematic = false;
-		Invoke ("Remove", removeTime);
+		Invoke ("Remove", StepPart.removeTime);
 	}
 	void Remove(){
 		Destroy (gameObject);

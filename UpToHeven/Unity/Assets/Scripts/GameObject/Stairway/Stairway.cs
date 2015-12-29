@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Stairway : MonoBehaviour {
 
+	public Transform player;
+	public float distanceToPlayer = 5.0f;
 	public GameObject firstChunk;
 	public int totalSteps;
 	public int chunkSizeInStepts = 10;
@@ -10,6 +13,8 @@ public class Stairway : MonoBehaviour {
 	public Vector3 chunkPosIncremental;
 
 	public GameObject[] chunks;
+
+	private List<GameObject> chunkInstances;
 
 
 
@@ -20,11 +25,13 @@ public class Stairway : MonoBehaviour {
 
 		totalSteps = chunkSizeInStepts;
 
+		chunkInstances = new List<GameObject> ();
+		chunkInstances.Add (currentChunk);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 	public GameObject addRandomChunk(){
@@ -35,7 +42,7 @@ public class Stairway : MonoBehaviour {
 		return instantiateChunk (value);
 
 	}
-	public GameObject instantiateChunk(int index){
+	private GameObject instantiateChunk(int index){
 
 		//Debug.Log (index);
 
@@ -52,11 +59,13 @@ public class Stairway : MonoBehaviour {
 
 		totalSteps += chunkSizeInStepts;
 
+		chunkInstances.Add (chunk);
+
 		return chunk;
 	}
 
 	public void StartFall(){
-		firstChunk.GetComponent<Chunk> ().Fall ();
+		firstChunk.GetComponent<Chunk> ().Fall (player, distanceToPlayer);
 		AudioSource audioSource = GetComponent<AudioSource> ();
 		audioSource.Play ();
 	}
