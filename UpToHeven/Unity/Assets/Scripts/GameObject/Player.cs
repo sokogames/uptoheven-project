@@ -107,6 +107,7 @@ public class Player : MonoBehaviour, IJumper {
 			audioSource.Stop();
 		}
 		audioSource.clip = explosionClip;
+		audioSource.volume = 1;
 		audioSource.Play ();
 
 		Destroy (transform.FindChild("body").gameObject, 0.1f);
@@ -153,6 +154,9 @@ public class Player : MonoBehaviour, IJumper {
 		if(!objectVision.hasBarrier(direction) && !objectVision.isOnEdge(direction)){
 			
 			jumpSlerpObject.Jump (direction);
+			if(!audioSource.isPlaying){
+				audioSource.Play();
+			}
 		}
 	}
 }

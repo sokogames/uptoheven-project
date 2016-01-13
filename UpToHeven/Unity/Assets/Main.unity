@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -445,7 +443,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 057394a65b396af4281ba568fdd7cce6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 057394a65b396af4281ba568fdd7cce6, type: 3}
+      propertyPath: m_Name
+      value: body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 057394a65b396af4281ba568fdd7cce6, type: 3}
@@ -2449,7 +2451,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455944, guid: 1d7ce3e0b1488f147a3326ca833b1bbe, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 167256, guid: 1d7ce3e0b1488f147a3326ca833b1bbe, type: 2}
       propertyPath: m_IsActive
@@ -6065,6 +6067,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: .934584141, b: .0514705777, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
@@ -7214,7 +7222,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -1000
+  near clip plane: -100
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -7226,6 +7234,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -8132,7 +8141,7 @@ MonoBehaviour:
   m_Script: {fileID: 178811533}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8150,7 +8159,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1076697475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9332,6 +9341,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -.5, z: 0}
+--- !u!1 &1205883711 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 057394a65b396af4281ba568fdd7cce6, type: 3}
+  m_PrefabInternal: {fileID: 35402673}
 --- !u!1 &1209982889
 GameObject:
   m_ObjectHideFlags: 0
@@ -12492,7 +12505,7 @@ Prefab:
     - target: {fileID: 11423244, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: playerBody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1205883711}
     - target: {fileID: 6570436, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: m_IsTrigger
       value: 0
@@ -12983,6 +12996,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: abc3372dacad1d2478800a3d3494e20c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -13678,6 +13697,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -14836,7 +14856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f25f511ab2fb924bac7b3283957f209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPref: {fileID: 0}
+  PlayerPref: {fileID: 1205883711}
   staticObscalesPrefs:
   - {fileID: 137148, guid: 08ff04cd56b652a4b8652bd08f706d1f, type: 2}
   - {fileID: 137148, guid: 4483e454e310f544d8d78c7ccf4a3096, type: 2}
@@ -15950,10 +15970,11 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f4c76d2f64366542b1be7541b19b23f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .277999997
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -18216,6 +18237,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
