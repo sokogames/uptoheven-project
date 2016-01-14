@@ -1215,6 +1215,10 @@ MonoScript:
   m_Namespace: UnityEngine.EventSystems
   m_AssemblyName: UnityEngine.UI.dll
   m_IsEditorScript: 0
+--- !u!1 &187790444 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 86fc1c45145717f4fb98105200ffd6c6, type: 3}
+  m_PrefabInternal: {fileID: 2071403133}
 --- !u!1 &214894570
 GameObject:
   m_ObjectHideFlags: 0
@@ -12450,7 +12454,7 @@ Prefab:
     - target: {fileID: 11423244, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: playerBody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 187790444}
     - target: {fileID: 6570436, guid: a9d0bfafd6a678341848165fbc02d5c6, type: 2}
       propertyPath: m_IsTrigger
       value: 0
@@ -14794,7 +14798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f25f511ab2fb924bac7b3283957f209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPref: {fileID: 0}
+  PlayerPref: {fileID: 187790444}
   staticObscalesPrefs:
   - {fileID: 137148, guid: 08ff04cd56b652a4b8652bd08f706d1f, type: 2}
   - {fileID: 137148, guid: 4483e454e310f544d8d78c7ccf4a3096, type: 2}
@@ -17503,6 +17507,10 @@ Prefab:
     - target: {fileID: 400000, guid: 86fc1c45145717f4fb98105200ffd6c6, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 86fc1c45145717f4fb98105200ffd6c6, type: 3}
+      propertyPath: m_Name
+      value: body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86fc1c45145717f4fb98105200ffd6c6, type: 3}
