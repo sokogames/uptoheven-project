@@ -60,7 +60,7 @@ public class GameController : Controller {
 	public void StartGame(){
 
 		GameController.GameState = GameController.GAME_STATE_PLAY;
-		GameObject.Find ("StartButton").SetActive (false);
+		GameObject.Find ("MainMenuCanvas").SetActive (false);
 		stairway.StartFall ();
 		light.intensity = 1.7f;
 		Debug.Log ("click");
