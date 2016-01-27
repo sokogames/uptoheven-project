@@ -21,19 +21,19 @@ public class GamePanel : MonoBehaviour {
 		text.text = Mathf.Max (231,(player.maxPosition)).ToString();
 	}
 
-	public void ClickPlay(GameObject sender){
-		iTween.MoveBy (sender, new Vector3 (0, buttonOffsetY, 0), 0.1f);
+	public void ClickPlay(ButtonScrollDown sender){
+		sender.ScrollDown ();
 		Invoke ("StartGame", 0.5f);
 		Invoke ("Fade", 0.2f);
 	}
-	public void ClickPlayer(GameObject sender){
-		iTween.MoveBy (sender, new Vector3 (0, buttonOffsetY, 0), 0.1f);
+	public void ClickPlayer(ButtonScrollDown sender){
+
 	}
-	public void ClickScore(GameObject sender){
-		iTween.MoveBy (sender, new Vector3 (0, buttonOffsetY, 0), 0.1f);
+	public void ClickScore(ButtonScrollDown sender){
+
 	}
-	public void ClickSettings(GameObject sender){
-		iTween.MoveBy (sender, new Vector3 (0, buttonOffsetY, 0), 0.1f);
+	public void ClickSettings(ButtonScrollDown sender){
+
 	}
 	void StartGame(){
 		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
