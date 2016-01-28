@@ -5,10 +5,12 @@ public class ButtonScrollDown : MonoBehaviour {
 
 	private const float delta = 0.1f;
 	private const float scrollY = 40.0f;
+	private const float screenSizeStandard = 500.0f;
 	private const float speed = 10;
 	private Vector3 toPosition;
 	private bool scrollDown = false;
 	private RectTransform rectTransform;
+	
 	// Use this for initialization
 	void Start () {
 		scrollDown = false;
@@ -29,6 +31,6 @@ public class ButtonScrollDown : MonoBehaviour {
 		if (scrollDown)
 			return;
 		scrollDown = true;
-		toPosition = rectTransform.position - new Vector3 (0, scrollY, 0);
+		toPosition = rectTransform.position - new Vector3 (0, scrollY * Screen.height / screenSizeStandard, 0);
 	}
 }
