@@ -23,7 +23,7 @@ public class GamePanel : MonoBehaviour {
 
 	public void ClickPlay(ButtonScrollDown sender){
 		sender.ScrollDown ();
-		Invoke ("StartGame", 0.5f);
+		Invoke ("StartGame", 0.7f);
 		Invoke ("Fade", 0.2f);
 	}
 	public void ClickPlayer(ButtonScrollDown sender){
@@ -39,7 +39,7 @@ public class GamePanel : MonoBehaviour {
 		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
 	}
 	void Fade(){
-			FadeAllChild(transform,0.5f);
+			FadeAllChild(transform,0.7f);
 	}
 	void FadeAllChild(Transform parent, float duration){
 		foreach(Transform tr in parent){
