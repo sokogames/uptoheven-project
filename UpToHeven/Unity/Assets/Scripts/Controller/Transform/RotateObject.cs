@@ -80,10 +80,10 @@ public class RotateObject : MonoBehaviour {
 	}
 
 	public void RotateLeft(){
-		toRotation = transform.rotation * Quaternion.Euler (0, 270.0f, 0);
+		toRotation = transform.rotation * Quaternion.Euler (0, -91.0f, 0);
 	}
 	public void RotateRight(){
-		toRotation = transform.rotation * Quaternion.Euler (0, 90.0f, 0);
+		toRotation = transform.rotation * Quaternion.Euler (0, 91.0f, 0);
 	}
 	public void Reverse(){
 		toRotation = transform.rotation * Quaternion.Euler (0, 180.0f, 0);
@@ -95,10 +95,10 @@ public class RotateObject : MonoBehaviour {
 		toRotation = Quaternion.Euler (0, 180.0f, 0);
 	}
 	public void FaceLeft(){
-		toRotation = Quaternion.Euler (0, -90.0f, 0);
+		toRotation = Quaternion.Euler (0, -91.0f, 0);
 	}
 	public void FaceRight(){
-		toRotation = Quaternion.Euler (0, 90.0f, 0);
+		toRotation = Quaternion.Euler (0, 91.0f, 0);
 	}
 	public bool Done(){
 		return done;

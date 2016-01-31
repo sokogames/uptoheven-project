@@ -58,11 +58,10 @@ public class GameController : Controller {
 		Application.LoadLevel(0);
 	}
 	public void StartGame(){
-
 		GameController.GameState = GameController.GAME_STATE_PLAY;
-		GameObject.Find ("MainMenuCanvas").SetActive (false);
 		stairway.StartFall ();
 		light.intensity = 1.7f;
-		Debug.Log ("click");
+
+		GameObject.Find ("MainMenuCanvas").SetActive(false);
 	}
 }
