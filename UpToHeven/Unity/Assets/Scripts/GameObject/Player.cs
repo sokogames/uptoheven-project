@@ -45,6 +45,8 @@ public class Player : MonoBehaviour, IJumper {
 	public AudioClip explosionClip;
 
 	private Animator animator;
+
+	private bool isDead = false;
 	// Use this for initialization
 	void Start () {
 
@@ -59,6 +61,8 @@ public class Player : MonoBehaviour, IJumper {
 		rotateObject.OnRotationStarted += OnRotateStarted;
 
 		animator = GetComponent<Animator> ();
+
+		isDead = false;
 	}
 
 	private void OnJumpEnded(JumperDirection direction){
@@ -112,6 +116,7 @@ public class Player : MonoBehaviour, IJumper {
 
 		Destroy (transform.FindChild("body").gameObject, 0.1f);
 		transform.FindChild ("particle").gameObject.SetActive (true);
+		isDead = true;
 	}
 
 	public void Jump (JumperDirection direction){
@@ -155,8 +160,16 @@ public class Player : MonoBehaviour, IJumper {
 			
 			jumpSlerpObject.Jump (direction);
 			if(!audioSource.isPlaying){
+				audioSource.pitch = Random.Range(0.7f,1.3f);
 				audioSource.Play();
 			}
 		}
 	}
+	public bool IsDead{
+
+		get{
+			return isDead;
+		}
+	}
+
 }

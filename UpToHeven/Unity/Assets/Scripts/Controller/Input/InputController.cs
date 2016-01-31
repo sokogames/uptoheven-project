@@ -35,6 +35,10 @@ public class InputController : MonoBehaviour {
 			}
 		}
 
+		if (player.IsDead) {
+			return;
+		}
+
 		switch (command) {
 		case InputCommand.Tap:
 			player.QuickJump(JumperDirection.forward);
