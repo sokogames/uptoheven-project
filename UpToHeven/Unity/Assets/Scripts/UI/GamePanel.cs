@@ -8,6 +8,7 @@ public class GamePanel : MonoBehaviour {
 
 	public Player player;
 	private Text text;
+	private string comicsName = "Comics";
 
 	private 
 
@@ -23,7 +24,7 @@ public class GamePanel : MonoBehaviour {
 
 	public void ClickPlay(ButtonScrollDown sender){
 		sender.ScrollDown ();
-		Invoke ("StartGame", 0.7f);
+		Invoke ("StartGame", 6.0f);
 		Invoke ("Fade", 0.2f);
 	}
 	public void ClickPlayer(ButtonScrollDown sender){
@@ -36,18 +37,30 @@ public class GamePanel : MonoBehaviour {
 
 	}
 	void StartGame(){
+		FadeAllChild (transform.FindChild (comicsName).transform, 0.2f);
 		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
 	}
 	void Fade(){
-			FadeAllChild(transform,0.7f);
+		FadeAllChild(transform,0.7f,comicsName);
 	}
-	void FadeAllChild(Transform parent, float duration){
+	void FadeAllChild(Transform parent, float duration, string exceptName = ""){
 		foreach(Transform tr in parent){
+
+			if(tr.gameObject.name == exceptName) continue;
+
 			Image img = tr.GetComponent<Image>();
 			if(img){
 				img.CrossFadeColor(new Color(255,255,255,0), duration, false,true);
 			}
-			FadeAllChild(tr,duration);
+			Text text = tr.GetComponent<Text>();
+			if(text){
+				text.CrossFadeColor(new Color(255,255,255,0), duration, false,true);
+			}
+			Button button = tr.GetComponent<Button>();
+			if(button){
+				button.interactable = false;
+			}
+			FadeAllChild(tr,duration,exceptName);
 		}
 	}
 }
