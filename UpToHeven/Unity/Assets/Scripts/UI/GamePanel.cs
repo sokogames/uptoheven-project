@@ -24,7 +24,7 @@ public class GamePanel : MonoBehaviour {
 
 	public void ClickPlay(ButtonScrollDown sender){
 		sender.ScrollDown ();
-		Invoke ("StartGame", 6.0f);
+		Invoke ("StartGame", 12.0f);
 		Invoke ("Fade", 0.2f);
 	}
 	public void ClickPlayer(ButtonScrollDown sender){

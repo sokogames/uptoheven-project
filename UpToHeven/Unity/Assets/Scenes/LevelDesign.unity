@@ -3148,7 +3148,6 @@ MonoBehaviour:
   playerJumpTime: 0
   playerRedyForJumpTime: 0
   gameOverDelta: 3
-  actions: {fileID: 254998791}
 --- !u!4 &254998789
 Transform:
   m_ObjectHideFlags: 0
@@ -3223,7 +3222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeedScale: 1
-  globalData: {fileID: 254998793}
   controllers:
   - {fileID: 254998788}
 --- !u!4 &255599081 stripped

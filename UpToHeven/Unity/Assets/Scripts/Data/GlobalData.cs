@@ -7,6 +7,7 @@ public class GlobalData : MonoBehaviour {
 	public GameObject[] staticObscalesPrefs;
 	public GameObject [] dynamicObscalesPrefs;
 	public GameObject stepPartPref;
+
 	// Use this for initialization
 	void Start () {
 		

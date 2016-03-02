@@ -19,8 +19,6 @@ public class GameController : Controller {
 
 	public float gameOverDelta = 3.0f;
 
-	public Light light;
-
 	public void init(){
 
 		//init player
@@ -56,12 +54,13 @@ public class GameController : Controller {
 	public void GameOver(){
 		Debug.Log ("game over");
 		Application.LoadLevel(0);
+		GetComponent<DarkOrLight> ().StopDarkOrLight();
 	}
 	public void StartGame(){
 		GameController.GameState = GameController.GAME_STATE_PLAY;
 		stairway.StartFall ();
-		light.intensity = 1.7f;
-
+		GetComponent<DarkOrLight> ().StartDarkOrLight ();
 		GameObject.Find ("MainMenuCanvas").SetActive(false);
 	}
+
 }

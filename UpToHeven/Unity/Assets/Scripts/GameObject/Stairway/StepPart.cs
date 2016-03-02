@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StepPart : MonoBehaviour {
 
-	public static float removeTime = 1f;
+	public static float removeTime = 3f;
 	// Use this for initialization
 	void Start () {
 	

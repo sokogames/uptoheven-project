@@ -5,8 +5,9 @@ public class Main : MonoBehaviour {
 
 	public float gameSpeedScale = 1.0f;
 	public const int GAME_PLAY = 0;
-	
+
 	public Controller[] controllers;
+
 	// Use this for initialization
 	void Start () {
 
