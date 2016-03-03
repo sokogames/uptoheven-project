@@ -41,8 +41,8 @@ public class LampLight : MonoBehaviour {
 
 	IEnumerator CheckDarkOrLight(){
 		while (true) {
-			LightOn = Object.FindObjectOfType<DarkOrLight> ().isDark;
 			yield return new WaitForSeconds (darkOrLightCheckDuration);
+			LightOn = Object.FindObjectOfType<DarkOrLight> ().isDark;
 		}
 	}
 }
