@@ -26,8 +26,6 @@ public class Player : MonoBehaviour, IJumper {
 
 	public event JumperEnded OnJumperEnded;
 
-	public GameObject playerBody;
-
 	public int currentStepPostion = 0;
 	public int maxPosition = 1;
 

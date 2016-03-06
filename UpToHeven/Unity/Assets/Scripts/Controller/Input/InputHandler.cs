@@ -38,7 +38,7 @@ public class InputHandler : MonoBehaviour {
 
 
 			if (touch.tapCount > 0) {
-				Debug.Log("tap not taouch");
+				Debug.Log("tap not touch");
 				return InputCommand.Tap;
 			}
 

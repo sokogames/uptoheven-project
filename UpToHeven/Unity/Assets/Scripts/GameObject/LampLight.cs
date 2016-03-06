@@ -6,6 +6,7 @@ public class LampLight : MonoBehaviour {
 
 	public Light lampLight;
 	public const float lightIntensity = 3.22f;
+	public const float bounceIntensity = 0.0f;
 	public float lerpSpeed = 1.0f;
 	public float darkOrLightCheckDuration = 1.0f;
 	private const float darkLightIntensity = 0.0f;
@@ -28,7 +29,7 @@ public class LampLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lampLight.intensity = LampLight.darkLightIntensity;
-
+		lampLight.bounceIntensity = bounceIntensity;
 		StartCoroutine ("CheckDarkOrLight");
 	}
 	

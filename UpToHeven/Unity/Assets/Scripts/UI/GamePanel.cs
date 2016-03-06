@@ -25,10 +25,13 @@ public class GamePanel : MonoBehaviour {
 	public void ClickPlay(ButtonScrollDown sender){
 		sender.ScrollDown ();
 		Invoke ("StartGame", 12.0f);
+		transform.Find (comicsName).gameObject.SetActive (true);
 		Invoke ("Fade", 0.2f);
 	}
 	public void ClickPlayer(ButtonScrollDown sender){
-
+		sender.ScrollDown ();
+		Invoke("ChoosePlayer",0.2f);
+		Invoke ("Fade", 0.2f);
 	}
 	public void ClickScore(ButtonScrollDown sender){
 
@@ -62,5 +65,8 @@ public class GamePanel : MonoBehaviour {
 			}
 			FadeAllChild(tr,duration,exceptName);
 		}
+	}
+	void ChoosePlayer(){
+		GameObject.Find ("_main").GetComponent<GameController> ().ViewPlayerList ();
 	}
 }
