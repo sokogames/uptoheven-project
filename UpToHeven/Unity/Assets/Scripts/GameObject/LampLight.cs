@@ -23,7 +23,11 @@ public class LampLight : MonoBehaviour {
 
 		set{
 			_lightOn = value;
-			toLightIntensity = value ? LampLight.lightIntensity : LampLight.darkLightIntensity;		
+			toLightIntensity = value ? LampLight.lightIntensity : LampLight.darkLightIntensity;	
+
+			if (value) {
+				lampLight.enabled = true;
+			}
 		}
 	}
 	// Use this for initialization
@@ -44,6 +48,10 @@ public class LampLight : MonoBehaviour {
 		while (true) {
 			yield return new WaitForSeconds (darkOrLightCheckDuration);
 			LightOn = Object.FindObjectOfType<DarkOrLight> ().isDark;
+
+			if (lampLight.intensity < 0.06f && !LightOn) {
+				lampLight.enabled = false;
+			}
 		}
 	}
 }

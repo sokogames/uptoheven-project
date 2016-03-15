@@ -24,7 +24,7 @@ public class GamePanel : MonoBehaviour {
 
 	public void ClickPlay(ButtonScrollDown sender){
 		sender.ScrollDown ();
-		Invoke ("StartGame", 12.0f);
+		//Invoke ("StartGame", 12.0f);
 		transform.Find (comicsName).gameObject.SetActive (true);
 		Invoke ("Fade", 0.2f);
 	}
@@ -39,8 +39,8 @@ public class GamePanel : MonoBehaviour {
 	public void ClickSettings(ButtonScrollDown sender){
 
 	}
-	void StartGame(){
-		FadeAllChild (transform.FindChild (comicsName).transform, 0.2f);
+	public void StartGame(){
+		FadeAllChild (transform.FindChild (comicsName).transform, 0.3f);
 		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
 	}
 	void Fade(){
