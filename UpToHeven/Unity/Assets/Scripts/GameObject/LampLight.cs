@@ -11,6 +11,7 @@ public class LampLight : MonoBehaviour {
 	public float darkOrLightCheckDuration = 1.0f;
 	private const float darkLightIntensity = 0.0f;
 	private float toLightIntensity;
+	private static DarkOrLight darkOrLight; 
 
 	private bool _lightOn = false;
 
@@ -35,6 +36,10 @@ public class LampLight : MonoBehaviour {
 		lampLight.intensity = LampLight.darkLightIntensity;
 		lampLight.bounceIntensity = bounceIntensity;
 		StartCoroutine ("CheckDarkOrLight");
+
+		if (darkOrLight == null) {
+			darkOrLight = Object.FindObjectOfType<DarkOrLight> ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -47,7 +52,7 @@ public class LampLight : MonoBehaviour {
 	IEnumerator CheckDarkOrLight(){
 		while (true) {
 			yield return new WaitForSeconds (darkOrLightCheckDuration);
-			LightOn = Object.FindObjectOfType<DarkOrLight> ().isDark;
+			LightOn = darkOrLight.isDark;
 
 			if (lampLight.intensity < 0.06f && !LightOn) {
 				lampLight.enabled = false;

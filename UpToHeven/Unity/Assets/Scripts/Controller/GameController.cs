@@ -62,7 +62,7 @@ public class GameController : Controller {
 		stairway.StartFall ();
 		GetComponent<DarkOrLight> ().StartDarkOrLight ();
 		GameObject.Find ("MainMenuCanvas").SetActive(false);
-		playerList.GetComponent<PlayerList>().Show(false);
+		playerList.SetActive (false);
 	}
 	public void ViewPlayerList(){
 		GameController.GameState = GameController.GAME_STATE_CHOOSE_PLAYER;
