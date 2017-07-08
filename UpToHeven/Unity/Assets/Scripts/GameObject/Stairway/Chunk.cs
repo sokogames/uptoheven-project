@@ -39,7 +39,7 @@ public class Chunk : MonoBehaviour {
 
 		int stepIndex = 0;
 
-		while (step = transform.FindChild(stepPrefix + stepIndex++.ToString())) {
+		while (step = transform.Find(stepPrefix + stepIndex++.ToString())) {
 
 			int stepPartIndex = 0;
 
@@ -51,7 +51,7 @@ public class Chunk : MonoBehaviour {
 
 			yield return new WaitForSeconds (currentFallDelta);
 
-			while (stepPart = step.FindChild(stepPartPrefix + stepPartIndex++.ToString())) {
+			while (stepPart = step.Find(stepPartPrefix + stepPartIndex++.ToString())) {
 				yield return new WaitForSeconds (currentFallDelta);
 
 				stepPart.GetComponent<StepPart> ().Fall ();

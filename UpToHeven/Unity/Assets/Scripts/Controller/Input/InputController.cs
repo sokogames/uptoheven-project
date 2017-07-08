@@ -29,8 +29,6 @@ public class InputController : MonoBehaviour {
 		if (command != InputCommand.None) {
 			if (GameController.GameState != GameController.GAME_STATE_PLAY) {
 				
-				//GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
-				//player.QuickJump(JumperDirection.forward);
 				return;
 			}
 		}

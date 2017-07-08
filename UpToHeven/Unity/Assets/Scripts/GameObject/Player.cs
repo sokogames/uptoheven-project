@@ -112,8 +112,8 @@ public class Player : MonoBehaviour, IJumper {
 		audioSource.volume = 1;
 		audioSource.Play ();
 
-		Destroy (transform.FindChild("body").gameObject, 0.1f);
-		transform.FindChild ("particle").gameObject.SetActive (true);
+		Destroy (transform.Find("body").gameObject, 0.1f);
+		transform.Find ("particle").gameObject.SetActive (true);
 		isDead = true;
 	}
 

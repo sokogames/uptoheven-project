@@ -5,12 +5,12 @@ using UnityEngine.UI;
 public class GamePanel : MonoBehaviour {
 
 	const float buttonOffsetY = -40; 
-
+	
 	public Player player;
 	private Text text;
 	private string comicsName = "Comics";
 
-	private 
+	public float fadeAllDuration = 0.7f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +27,7 @@ public class GamePanel : MonoBehaviour {
 		//Invoke ("StartGame", 12.0f);
 		transform.Find (comicsName).gameObject.SetActive (true);
 		Invoke ("Fade", 0.2f);
+		Invoke("DisableWallpaper",fadeAllDuration);
 	}
 	public void ClickPlayer(ButtonScrollDown sender){
 		sender.ScrollDown ();
@@ -40,11 +41,11 @@ public class GamePanel : MonoBehaviour {
 
 	}
 	public void StartGame(){
-		FadeAllChild (transform.FindChild (comicsName).transform, 0.3f);
-		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
+		FadeAllChild (transform.Find (comicsName).transform, 0.3f);
+		Invoke("GameControllerStartGame",0.3f);
 	}
 	void Fade(){
-		FadeAllChild(transform,0.7f,comicsName);
+		FadeAllChild(transform,fadeAllDuration,comicsName);
 	}
 	void FadeAllChild(Transform parent, float duration, string exceptName = ""){
 		foreach(Transform tr in parent){
@@ -68,5 +69,11 @@ public class GamePanel : MonoBehaviour {
 	}
 	void ChoosePlayer(){
 		GameObject.Find ("_main").GetComponent<GameController> ().ViewPlayerList ();
+	}
+	void DisableWallpaper(){
+		GameObject.Find ("Wallpaper").SetActive(false);
+	}
+	void GameControllerStartGame(){
+		GameObject.Find ("_main").GetComponent<GameController> ().StartGame ();
 	}
 }
