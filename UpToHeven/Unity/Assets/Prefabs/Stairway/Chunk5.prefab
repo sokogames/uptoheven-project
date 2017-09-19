@@ -7467,7 +7467,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 7.023053, y: 6.899687, z: -9.683635}
+=======
   m_LocalPosition: {x: 4.717287, y: 2.2067862, z: -4.1823773}
+>>>>>>> origin/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401788}
@@ -8384,6 +8388,8 @@ MeshRenderer:
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
+<<<<<<< HEAD
+=======
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -8410,6 +8416,7 @@ MeshRenderer:
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
+>>>>>>> origin/master
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -9141,6 +9148,8 @@ MeshRenderer:
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
+<<<<<<< HEAD
+=======
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -9167,6 +9176,7 @@ MeshRenderer:
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
+>>>>>>> origin/master
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10360,6 +10370,8 @@ MeshRenderer:
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
+<<<<<<< HEAD
+=======
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -10386,6 +10398,7 @@ MeshRenderer:
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
+>>>>>>> origin/master
   m_ImportantGI: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -13515,6 +13528,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!65 &6519692
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -13527,6 +13542,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
+>>>>>>> origin/master
 --- !u!65 &6520578
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -13575,6 +13591,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.8, z: 0.5}
   m_Center: {x: 0, y: 0.3, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!65 &6522384
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -13587,6 +13605,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
+>>>>>>> origin/master
 --- !u!65 &6522464
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -14295,6 +14314,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!65 &6568368
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -14307,6 +14328,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
+>>>>>>> origin/master
 --- !u!65 &6569340
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -14619,6 +14641,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!65 &6587600
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -14631,6 +14655,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 0}
+>>>>>>> origin/master
 --- !u!65 &6590192
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -18161,6 +18186,8 @@ MonoBehaviour:
   visionDistance: 1
   barrierCheckOffset: {x: 0, y: 0.5, z: 0}
   edgeCheckOffset: {x: 0, y: 0.6, z: 0}
+<<<<<<< HEAD
+=======
 --- !u!114 &11458904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18175,6 +18202,7 @@ MonoBehaviour:
   lampLight: {fileID: 10840166}
   lerpSpeed: 1
   darkOrLightCheckDuration: 1
+>>>>>>> origin/master
 --- !u!114 &11459662
 MonoBehaviour:
   m_ObjectHideFlags: 1
